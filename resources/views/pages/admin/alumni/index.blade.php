@@ -1,4 +1,4 @@
 @extends('pages.admin.index')
 
-@section('title', 'Project')
+@section('title', 'Alumni')
 

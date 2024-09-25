@@ -1,4 +1,3 @@
 @extends('pages.admin.index')
 
-@section('title', 'Project')
-
+@section('title', 'Dashboard')
