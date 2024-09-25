@@ -1,6 +1,5 @@
 @extends('pages.admin.index')
 
-@section('title', 'Project')
+@section('title', 'Comment')
 
 @endsection
-
