@@ -10,7 +10,6 @@ class PagesController extends Controller
         return view('pages.admin.dashboard.index');
     }
 
-
     public function konfig(){
         return view('pages.admin.konfig.index');
     }

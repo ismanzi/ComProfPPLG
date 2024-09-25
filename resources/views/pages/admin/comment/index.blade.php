@@ -2,3 +2,4 @@
 
 @section('title', 'Comment')
 
+@endsection

@@ -2,3 +2,5 @@
 
 @section('title', 'Achievement')
 
+@endsection
+

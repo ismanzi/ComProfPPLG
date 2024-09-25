@@ -77,14 +77,14 @@
             <li class="nav-item {{ Request::is('peoject*') ? 'active' : '' }}">
                 <a class="nav-link"  href="{{ route('pages.admin.projek.index')}}">
                     <i class="fa-solid fa-diagram-project"></i>
-                    <span>Projects</span></a>
+                    <span>Project</span></a>
             </li>
 
             <!-- Nav Item - Achievement -->
             <li class="nav-item {{ Request::is('achievement*') ? 'active' : '' }}">
                 <a class="nav-link"  href="{{ route('pages.admin.achievement.index')}}">
                     <i class="fa-solid fa-trophy"></i>
-                    <span>Achievements</span></a>
+                    <span>Achievement</span></a>
             </li>
 
             <!-- Nav Item - News -->
@@ -94,11 +94,11 @@
                     <span>News</span></a>
             </li>
 
-            <!-- Nav Item - Comment -->
+            <!-- Nav Item - Comments -->
             <li class="nav-item {{ Request::is('comment*') ? 'active' : '' }}">
                 <a class="nav-link"  href="{{ route('pages.admin.comment.index')}}">
                     <i class="fa-solid fa-comments"></i>
-                    <span>Comments</span></a>
+                    <span>Comment</span></a>
             </li>
 
             <!-- Divider -->
