@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\admin\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,8 @@ Route::get('/alumni', [PagesController::class, 'alumni'])->name('pages.admin.alu
 Route::get('/subject', [PagesController::class, 'subject'])->name('pages.admin.subject.index');
 Route::get('/projek', [PagesController::class, 'projek'])->name('pages.admin.projek.index');
 Route::get('/achievement', [PagesController::class, 'achievement'])->name('pages.admin.achievement.index');
+Route::get('/achievement/create', [PagesController::class, 'createachievement'])->name('pages.admin.achievement.create');
+
 Route::get('/news', [PagesController::class, 'news'])->name('pages.admin.news.index');
 Route::get('/comment', [PagesController::class, 'comment'])->name('pages.admin.comment.index');
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="#">
     <meta name="author" content="">
 
     <title>PPLG SMKN 1 KARAWANG</title>
@@ -33,7 +33,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <img src="{{ asset('baseadmin/img/logos/Perisai_PPLG.png') }}" width="50px" alt="">
+                <img src="{{ asset('baseadmin/img/logos/Perisai_PPLG.png') }}" width="50px" alt="#">
             </a>
 
             <!-- Nav Item - Dashboard -->
@@ -217,12 +217,17 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@yield('title')</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i>@yield('btn-icon')</i>@yield('btn-title')</a>
-
-
+                        @yield('link-btn-title') 
                     </div>
-                    @yield('content')
 
+                    <!-- Content Row -->
+
+                    <div class="row">
+                        <!-- Area Chart -->
+                        <div class="col-12">
+                            @yield('content')
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
