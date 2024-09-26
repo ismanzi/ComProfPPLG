@@ -2,5 +2,4 @@
 
 @section('title', 'Configuration')
 
-@endsection
 

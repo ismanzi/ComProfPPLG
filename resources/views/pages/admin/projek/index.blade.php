@@ -2,5 +2,4 @@
 
 @section('title', 'Project')
 
-@endsection
 
