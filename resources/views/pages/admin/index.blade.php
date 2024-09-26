@@ -36,68 +36,78 @@
                 <img src="{{ asset('baseadmin/img/logos/Perisai_PPLG.png') }}" width="50px" alt="">
             </a>
 
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ Request::is('dashboard*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('pages.admin.dashboard.index')}}">
+                <a class="nav-link" href="{{ route('pages.admin.dashboard.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span>
+                </a>
             </li>
 
-             <!-- Nav Item - configuration -->
-             <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('pages.admin.konfig.index')}}">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>Configuration</span></a>
+            <!-- Nav Item - Management Collapse Menu -->
+            <li
+                class="nav-item {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Management</span>
+                </a>
+                <div id="collapseTwo"
+                    class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievement.index') }}">
+                            <i class="fa-solid fa-trophy" style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Achievement</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subject.index') }}">
+                            <i class="fa-solid fa-book" style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Subject</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
+                            <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Project</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}" href="{{ route('pages.admin.alumni.index') }}">
+                            <i class="fa-solid fa-user-graduate" style="color: {{ Request::is('alumni*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Alumni</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.news.index') }}">
+                            <i class="fa-solid fa-newspaper" style="color: {{ Request::is('news*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">News</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
+                            <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Staff</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.comment.index') }}">
+                            <i class="fa-solid fa-comment-dots" style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Comment</span>
+                        </a>
+                    </div>
+                </div>
             </li>
 
-            <!-- Nav Item - Staff -->
-            <li class="nav-item {{ Request::is('staff*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.staff.index')}}">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Staff</span></a>
-            </li>
-
-            <!-- Nav Item - Alumni -->
-            <li class="nav-item {{ Request::is('alumni*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.alumni.index')}}">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Alumni</span></a>
-            </li>
-
-            <!-- Nav Item - Subject -->
-            <li class="nav-item {{ Request::is('subject*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('pages.admin.subject.index')}}">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Subject</span></a>
-            </li>
-
-            <!-- Nav Item - Project -->
-            <li class="nav-item {{ Request::is('peoject*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.projek.index')}}">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <span>Project</span></a>
-            </li>
-
-            <!-- Nav Item - Achievement -->
-            <li class="nav-item {{ Request::is('achievement*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.achievement.index')}}">
-                    <i class="fa-solid fa-trophy"></i>
-                    <span>Achievement</span></a>
-            </li>
-
-            <!-- Nav Item - News -->
-            <li class="nav-item {{ Request::is('news*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.news.index')}}">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span>News</span></a>
-            </li>
-
-            <!-- Nav Item - Comments -->
-            <li class="nav-item {{ Request::is('comment*') ? 'active' : '' }}">
-                <a class="nav-link"  href="{{ route('pages.admin.comment.index')}}">
-                    <i class="fa-solid fa-comments"></i>
-                    <span>Comment</span></a>
+            <!-- Nav Item - Settings Collapse Menu -->
+            <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Settings</span>
+                </a>
+                <div id="collapseUtilities" class="collapse {{ Request::is('konfig*') ? 'show' : '' }}"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfig.index') }}">
+                            <i class="fa-solid fa-globe" style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Configuration</span>
+                        </a>
+                            <a class="collapse-item" href="#">
+                                <i class="fa-solid fa-right-from-bracket" style="color: #858796;"></i>
+                                <span style="margin-left: 8px;">Logout</span>
+                            </a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -180,7 +190,7 @@
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
                                 <a class="dropdown-item" href="#">
@@ -207,9 +217,12 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@yield('title')</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i>@yield('btn-icon')</i>@yield('btn-title')</a>
+
 
                     </div>
-                        @yield('content')
+                    @yield('content')
+
                 </div>
                 <!-- /.container-fluid -->
 
