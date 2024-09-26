@@ -20,12 +20,19 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
 Route::get('/staff', [PagesController::class, 'staff'])->name('pages.admin.staff.index');
-Route::get('/konfig', [PagesController::class, 'konfig'])->name('pages.admin.konfig.index');
+Route::get('/configuration', [PagesController::class, 'konfig'])->name('pages.admin.konfig.index');
 Route::get('/alumni', [PagesController::class, 'alumni'])->name('pages.admin.alumni.index');
 Route::get('/subject', [PagesController::class, 'subject'])->name('pages.admin.subject.index');
-Route::get('/projek', [PagesController::class, 'projek'])->name('pages.admin.projek.index');
+Route::get('/project', [PagesController::class, 'projek'])->name('pages.admin.projek.index');
 Route::get('/achievement', [PagesController::class, 'achievement'])->name('pages.admin.achievement.index');
 Route::get('/achievement/create', [PagesController::class, 'createachievement'])->name('pages.admin.achievement.create');
+Route::get('/subject/create', [PagesController::class, 'createsubject'])->name('pages.admin.subject.create');
+Route::get('/project/create', [PagesController::class, 'createprojek'])->name('pages.admin.projek.create');
+Route::get('/staff/create', [PagesController::class, 'createstaff'])->name('pages.admin.staff.create');
+Route::get('/comment/create', [PagesController::class, 'createcomment'])->name('pages.admin.comment.create');
+Route::get('/news/create', [PagesController::class, 'createnews'])->name('pages.admin.news.create');
+Route::get('/alumni/create', [PagesController::class, 'createalumni'])->name('pages.admin.alumni.create');
+
 
 Route::get('/news', [PagesController::class, 'news'])->name('pages.admin.news.index');
 Route::get('/comment', [PagesController::class, 'comment'])->name('pages.admin.comment.index');

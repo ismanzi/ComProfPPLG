@@ -8,6 +8,16 @@
 <i class="fa-solid fa-plus"></i>
 @endsection
 
+@section('link-btn-title')
+<a href="{{ route('pages.admin.subject.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    @yield('btn-icon') @yield('btn-title')
+</a>
+@endsection
+
+@section('btn-icon')
+<i class="fa-solid fa-plus"></i>
+@endsection
+
 @section('content')
 <!-- Basic Card Example -->
 <div class="card shadow mb-4">
