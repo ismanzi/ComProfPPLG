@@ -7,43 +7,43 @@
         <div class="card-body">
             <form>
                 <div class="mb-3">
-                    <label for="nama_pencapaian" class="form-label">Nama Pencapaian</label>
-                    <input type="text" class="form-control" id="nama_pencapaian" name="nama_pencapaian" required>
+                    <label for="name" class="form-label">Nama Pencapaian</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3">
-                    <label for="posisi" class="form-label">Posisi</label>
-                    <input type="text" class="form-control" id="posisi" name="posisi" required>
+                    <label for="position" class="form-label">Posisi</label>
+                    <input type="text" class="form-control" id="position" name="position" required>
                 </div>
                 <div class="mb-3">
                     <label for="bidang" class="form-label">Bidang</label>
                     <input type="text" class="form-control" id="bidang" name="bidang" required>
                 </div>
                 <div class="mb-3">
-                    <label for="tingkat" class="form-label">Tingkat</label>
-                    <input type="text" class="form-control" id="tingkat" name="tingkat" required>
+                    <label for="area" class="form-label">Bidang</label>
+                    <input type="text" class="form-control" id="area" name="area" required>
                 </div>
                 <div class="mb-3">
-                    <label for="penyelenggara" class="form-label">Penyelenggara</label>
-                    <input type="text" class="form-control" id="penyelenggara" name="penyelenggara" required>
+                    <label for="organizer" class="form-label">Penyelenggara</label>
+                    <input type="text" class="form-control" id="organizer" name="organizer" required>
                 </div>
                 <div class="mb-3">
-                    <label for="tanggal" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="foto" class="form-label">Foto</label>
-                    <input type="file" class="form-control" id="foto" name="foto" required>
+                    <label for="date" class="form-label">Tanggal</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="peserta" class="form-label">Peserta</label>
-                    <textarea class="form-control" id="peserta" name="peserta" rows="4"></textarea>
+                    <label for="image" class="form-label">Foto</label>
+                    <input type="file" class="form-control" id="image" name="image" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="deskripsi" class="form-label">Deskripsi Tambahan</label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4"></textarea>
+                    <label for="participant" class="form-label">Peserta</label>
+                    <textarea class="form-control" id="participant" name="participant" rows="4"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
