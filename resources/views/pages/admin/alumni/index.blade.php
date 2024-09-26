@@ -2,4 +2,3 @@
 
 @section('title', 'Alumni')
 
-@endsection

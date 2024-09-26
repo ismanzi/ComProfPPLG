@@ -2,6 +2,5 @@
 
 @section('title', 'Staff')
 
-@endsection
 
 
