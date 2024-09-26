@@ -21,7 +21,7 @@ class BeritaController extends Controller
 
         $beritas= Berita::get();
 
-        return view('pages.admin.berita.index',[
+        return view('pages.admin.news.index',[
             'berita' =>SpladeTable::for(Berita::class)
             -> column('id')
             -> column('title')
@@ -40,7 +40,7 @@ class BeritaController extends Controller
        SEO::title('Tambah Berita');
 
        $berita = Berita::all();
-       return view('pages.admin.berita.create', compact('berita'));
+       return view('pages.admin.news.create', compact('berita'));
     }
 
     /**
@@ -63,7 +63,7 @@ class BeritaController extends Controller
        ]);
 
        Toast::title('Berita Berhasil Disimpan');
-       return view('berita.index');
+       return view('pages.admin.news.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class BeritaController extends Controller
 
         SEO::title('Edit Berita');
 
-        return view('pages.admin.berita.edit', compact('berita'));
+        return view('pages.admin.news.edit', compact('berita'));
     }
 
     /**
@@ -111,7 +111,7 @@ class BeritaController extends Controller
         Toast::title('Berita berhasil Diupdate!')
         ->autoDismiss(6);
 
-        return to_route('berita.index');
+        return to_route('pages.admin.news.index');
     }
 
     /**
@@ -127,6 +127,6 @@ class BeritaController extends Controller
         Toast::title('Berita berhasil dihapus!')
         ->autoDismiss(6);
 
-        return to_route('berita.index');
+        return to_route('pages.admin.news.index');
     }
 }
