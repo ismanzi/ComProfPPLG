@@ -20,8 +20,8 @@ class PrestasiController extends Controller
         SEO::title ('Data Prestasi');
 
         $achievement = Prestasi::get();
-        return view('pages.admin.prestasi.index',[
-            'achievement'=>SpladeTable:: for (Prestasi::class)
+        return view('pages.admin.achievement.index',[
+            'prestasi'=>SpladeTable:: for (Prestasi::class)
             -> column('id')
             -> column('name')
             ->column('subjek')
@@ -42,7 +42,7 @@ class PrestasiController extends Controller
         //
         SEO::title('Tambah Prestasi');
         $achievement = Prestasi::all();
-        return view ('pages.admin.prestasi.create', compact ('achievement'));
+        return view ('pages.admin.achievement.create', compact ('achievement'));
     }
 
     /**
@@ -72,7 +72,7 @@ class PrestasiController extends Controller
         Toast::title('Prestasi berhasil ditambahkan!')
         ->autoDismiss(6);
 
-        return to_route('prestasi.index');
+        return to_route('pages.admin.achievement.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class PrestasiController extends Controller
 
         SEO::title('Edit Prestasi');
 
-        return view('pages.admin.prestasi.edit', compact('achievement'));
+        return view('pages.admin.achievement.edit', compact('achievement'));
     }
 
     /**
@@ -130,7 +130,7 @@ class PrestasiController extends Controller
         Toast::title('Prestasi berhasil diupdate!')
         ->autoDismiss(6);
 
-        return to_route('prestasi.index');
+        return to_route('pages.admin.achievement.index');
     }
 
     /**
@@ -146,6 +146,6 @@ class PrestasiController extends Controller
         Toast::title('Prestasi berhasil dihapus!')
         ->autoDismiss(6);
 
-        return to_route('prestasi.index');
+        return to_route('pages.admin.achievement.index');
     }
 }
