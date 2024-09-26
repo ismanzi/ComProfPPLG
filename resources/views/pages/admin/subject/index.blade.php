@@ -14,10 +14,6 @@
 </a>
 @endsection
 
-@section('btn-icon')
-<i class="fa-solid fa-plus"></i>
-@endsection
-
 @section('content')
 <!-- Basic Card Example -->
 <div class="card shadow mb-4">

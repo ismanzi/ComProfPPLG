@@ -1,6 +1,6 @@
 @extends('pages.admin.index')
 
-@section('title', 'Create Projek')
+@section('title', 'Create Project')
 
 @section('content')
 <!-- Basic Card Example -->

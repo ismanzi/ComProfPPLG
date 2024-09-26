@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('pages.admin.index');
 });
 
+
+//  ini route admin
 Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
 Route::get('/staff', [PagesController::class, 'staff'])->name('pages.admin.staff.index');
 Route::get('/configuration', [PagesController::class, 'konfig'])->name('pages.admin.konfig.index');
