@@ -58,7 +58,6 @@
                     <span>Staff</span></a>
             </li>
 
-
             <!-- Nav Item - Alumni -->
             <li class="nav-item {{ Request::is('alumni*') ? 'active' : '' }}">
                 <a class="nav-link"  href="{{ route('pages.admin.alumni.index')}}">
