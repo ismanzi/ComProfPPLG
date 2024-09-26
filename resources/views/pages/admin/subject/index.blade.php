@@ -9,7 +9,7 @@
 @endsection
 
 @section('link-btn-title')
-<a href="{{ route('pages.admin.subject.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+<a href="{{ route('pages.admin.subjectcreate') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
     @yield('btn-icon') @yield('btn-title')
 </a>
 @endsection

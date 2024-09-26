@@ -56,31 +56,31 @@
                     class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievement.index') }}">
+                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievementindex') }}">
                             <i class="fa-solid fa-trophy" style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Achievement</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subject.index') }}">
+                        <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subjectindex') }}">
                             <i class="fa-solid fa-book" style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Subject</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
+                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projekindex') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}" href="{{ route('pages.admin.alumni.index') }}">
+                        <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}" href="{{ route('pages.admin.alumniindex') }}">
                             <i class="fa-solid fa-user-graduate" style="color: {{ Request::is('alumni*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Alumni</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.news.index') }}">
+                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.newsindex') }}">
                             <i class="fa-solid fa-newspaper" style="color: {{ Request::is('news*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">News</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
+                        <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staffindex') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.comment.index') }}">
+                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.commentindex') }}">
                             <i class="fa-solid fa-comment-dots" style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Comment</span>
                         </a>
@@ -98,7 +98,7 @@
                 <div id="collapseUtilities" class="collapse {{ Request::is('konfig*') ? 'show' : '' }}"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfig.index') }}">
+                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfigindex') }}">
                             <i class="fa-solid fa-globe" style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Configuration</span>
                         </a>
@@ -217,7 +217,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@yield('title')</h1>
-                        @yield('link-btn-title') 
+                        @yield('link-btn-title')
                     </div>
 
                     <!-- Content Row -->
