@@ -29,6 +29,11 @@ class PagesController extends Controller
         return view('pages.admin.staff.edit');
     }
 
+    public function staffview()
+    {
+        return view('pages.admin.staff.view');
+    }
+
     //  Configuration
     public function konfig()
     {
@@ -57,6 +62,11 @@ class PagesController extends Controller
         return view('pages.admin.alumni.edit');
     }
 
+    public function alumniview()
+    {
+        return view('pages.admin.alumni.view');
+    }
+
     // Subject
     public function subject()
     {
@@ -71,6 +81,11 @@ class PagesController extends Controller
     public function subjectedit()
     {
         return view('pages.admin.subject.edit');
+    }
+
+    public function subjectview()
+    {
+        return view('pages.admin.subject.view');
     }
 
     // Project
@@ -89,20 +104,14 @@ class PagesController extends Controller
         return view('pages.admin.projek.edit');
     }
 
-    // Achievement
-    public function achievement()
+    public function projectview()
     {
-        return view('pages.admin.achievement.index');
+        return view('pages.admin.projek.view');
     }
 
-    public function achievementcreate()
+    public function achievementview()
     {
-        return view('pages.admin.achievement.create');
-    }
-
-    public function achievementedit()
-    {
-        return view('pages.admin.achievement.edit');
+        return view('pages.admin.achievement.view');
     }
 
     // News
@@ -121,6 +130,11 @@ class PagesController extends Controller
         return view('pages.admin.news.edit');
     }
 
+    public function newsview()
+    {
+        return view('pages.admin.news.view');
+    }
+
     // Comment
     public function comment()
     {
@@ -135,6 +149,11 @@ class PagesController extends Controller
     public function commentedit()
     {
         return view('pages.admin.comment.edit');
+    }
+
+    public function commentview()
+    {
+        return view('pages.admin.comment.view');
     }
 
 }
