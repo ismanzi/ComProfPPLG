@@ -15,9 +15,9 @@ use App\Http\Controllers\PageController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.admin.index');
-// });
+Route::get('/', function () {
+    return view('pages.admin.dashboard.index');
+});
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
@@ -26,7 +26,7 @@ Route::get('/login', function () {
 });
 
 // Dashboard Routes
-Route::get('/', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
+Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
 
 // Staff Routes
 Route::prefix('staff')->name('pages.admin.staff')->group(function () {

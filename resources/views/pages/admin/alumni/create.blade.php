@@ -26,11 +26,17 @@
                     <label for="image" class="form-label">Foto</label>
                     <input type="file" class="form-control" id="image" name="image" required>
                 </div>
-                {{-- Buat dropdown Achievement --}}
+                {{-- Mengarah ke tabel Achievement --}}
                 <div class="mb-3">
                     <label for="achievement" class="form-label">Penghargaan selama di Sekolah</label>
-                    <textarea class="form-control" id="achievement" name="achievement" rows="4"></textarea>
+                    <select class="form-control" id="achievement" name="achievement">
+                        <option value="">Pilih Penghargaan</option>
+                        {{-- @foreach ($achievements as $achievement)
+                            <option value="{{ $achievement->id }}">{{ $achievement->name }}</option>
+                        @endforeach --}}
+                    </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="desc" class="form-label">Deskripsi</label>
                     <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
@@ -40,6 +46,22 @@
             </form>
 
         </div>
+
+        {{-- CSS --}}
+        <style>
+
+            select.form-control {
+            height: calc(2.25rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            background-color: #fff;
+            background-clip: padding-box;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            }
+        </style>
 
         <!-- JavaScript -->
         <script>
