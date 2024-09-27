@@ -14,11 +14,16 @@
                     <label for="team" class="form-label">Tim</label>
                     <input type="text" class="form-control" id="team" name="team" required>
                 </div>
-                {{-- mengarah ke tabel subject --}}
-                <div class="mb-3">
-                    <label for="subject" class="form-label">Subjek</label>
-                    <input type="text" class="form-control" id="subject" name="subject" required>
-                </div>
+                      {{-- Mengarah ke tabel subject --}}
+                      <div class="mb-3">
+                        <label for="achievement" class="form-label">Subjek</label>
+                        <select class="form-control" id="achievement" name="achievement">
+                            <option value="">Pilih Subjek</option>
+                            {{-- @foreach ($subject as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                            @endforeach --}}
+                        </select>
+                    </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <input type="file" class="form-control" id="image" name="image" required>
