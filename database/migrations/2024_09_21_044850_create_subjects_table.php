@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('nip');
-            $table->string('jobDesc');
-            $table->string('linkedin')->nullable();
-            $table->string('image')->nullable();
+            $table->string('class');
+            $table->integer('hour');
+            $table->string('image');
+            $table->text('desc');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('subjects');
     }
 };

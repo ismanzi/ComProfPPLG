@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'nip', 'jobDesc', 'linkedin', 'image'];
+
+    public function achievements()
+    {
+        return $this->belongsToMany(Achievement::class, 'achievement_staff');
+    }
 }

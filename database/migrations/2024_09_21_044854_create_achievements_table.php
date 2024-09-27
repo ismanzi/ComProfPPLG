@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prestasi', function (Blueprint $table) {
+        Schema::create('achievements', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image1');
-            $table->string('image2');
-            $table->string('posisi');
+            $table->string('position');
+            $table->string('area');
             $table->string('level');
-            $table->string('subjek');
             $table->string('organizer');
-            $table->string('date');
-            $table->text('participant');
-            $table->text('desc');
+            $table->date('date');
+            $table->string('image')->nullable();
+            $table->text('participant')->nullable();
+            $table->text('desc')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prestasi');
+        Schema::dropIfExists('achievements');
     }
 };
