@@ -26,7 +26,7 @@ Route::get('/login', function () {
 });
 
 // Dashboard Routes
-Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
+Route::get('/', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
 
 // Staff Routes
 Route::prefix('staff')->name('pages.admin.staff')->group(function () {

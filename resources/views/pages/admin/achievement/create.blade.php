@@ -15,10 +15,6 @@
                     <input type="text" class="form-control" id="position" name="position" required>
                 </div>
                 <div class="mb-3">
-                    <label for="bidang" class="form-label">Bidang</label>
-                    <input type="text" class="form-control" id="bidang" name="bidang" required>
-                </div>
-                <div class="mb-3">
                     <label for="area" class="form-label">Bidang</label>
                     <input type="text" class="form-control" id="area" name="area" required>
                 </div>
