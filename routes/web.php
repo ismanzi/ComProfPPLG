@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\admin\NewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\PagesController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\admin\AchievementController;
+use App\Http\Controllers\admin\NewsController;
 
 
 /*
@@ -76,11 +76,20 @@ Route::prefix('achievement')->group(function () {
     Route::post('/', [AchievementController::class, 'store'])->name('achievement.store');
     Route::get('/{id}/view', [AchievementController::class, 'view'])->name('pages.admin.achievement.view');
     Route::get('/{id}/edit', [AchievementController::class, 'edit'])->name('pages.admin.achievement.edit');
-    Route::put('/{id}', [AchievementController::class, 'update'])->name('pages.admin.achievement.update');
+    Route::put('/{id}', [AchievementController::class, 'update'])->name('achievement.update');
     Route::delete('/{id}', [AchievementController::class, 'destroy'])->name('achievement.destroy');
 });
 
-
+// News Routes
+Route::prefix('news')->group(function () {
+    Route::get('/', [NewsController::class, 'index'])->name('pages.admin.news.index');
+    Route::get('/create', [NewsController::class, 'create'])->name('pages.admin.news.create');
+    Route::post('/', [NewsController::class, 'store'])->name('news.store');
+    Route::get('/{id}/view', [NewsController::class, 'view'])->name('pages.admin.news.view');
+    Route::get('/{id}/edit', [NewsController::class, 'edit'])->name('pages.admin.news.edit');
+    Route::put('/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+});
 
 // Comment Routes
 Route::prefix('comment')->name('pages.admin.comment')->group(function () {
@@ -89,14 +98,6 @@ Route::prefix('comment')->name('pages.admin.comment')->group(function () {
     Route::get('/edit', [PagesController::class, 'commentedit'])->name('edit');
     Route::get('/view', [PagesController::class, 'commentview'])->name('view');
 });
-
-// News Routes
-Route::prefix('news')->name('pages.admin.news')->group(function () {
-    Route::get('/', [PagesController::class, 'news'])->name('index');
-    Route::get('/create', [PagesController::class, 'newscreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'newsedit'])->name('edit');
-});
-
 
 Route::get('/login', function () {
     return view('login');
