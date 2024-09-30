@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\NewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\PagesController;
 use App\Http\Controllers\PageController;
@@ -77,10 +78,14 @@ Route::prefix('comment')->name('pages.admin.comment')->group(function () {
 });
 
 // News Routes
-Route::prefix('news')->name('pages.admin.news')->group(function () {
-    Route::get('/', [PagesController::class, 'news'])->name('index');
-    Route::get('/create', [PagesController::class, 'newscreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'newsedit'])->name('edit');
+Route::prefix('news')->group(function () {
+    Route::get('/', [NewsController::class, 'index'])->name('pages.admin.news.index');
+    Route::get('/create', [NewsController::class, 'create'])->name('pages.admin.news.create');
+    Route::post('/', [NewsController::class, 'store'])->name('news.store');
+    Route::get('/{id}/view', [NewsController::class, 'view'])->name('pages.admin.news.view');
+    Route::get('/{id}/edit', [NewsController::class, 'edit'])->name('pages.admin.news.edit');
+    Route::put('/{id}', [NewsController::class, 'update'])->name('pages.admin.news.update');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });
 
 

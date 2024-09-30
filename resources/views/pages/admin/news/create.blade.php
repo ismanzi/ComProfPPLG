@@ -6,6 +6,10 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <form>
+                <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    
                 <div class="mb-3">
                     <label for="title" class="form-label">Judul Artikel</label>
                     <input type="text" class="form-control" id="title" name="title" required>
@@ -16,7 +20,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
-                    <input type="file" class="form-control" id="image" name="image" required>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" required>
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="desc" class="form-label">Deskripsi Tambahan</label>
@@ -37,6 +44,12 @@
                     window.history.back();
                 }
             }
+
+            document.querySelector('.custom-file-input').addEventListener('change', function(e) {
+                var fileName = document.getElementById("image").files[0].name;
+                var nextSibling = e.target.nextElementSibling;
+                nextSibling.innerText = fileName;
+            });
         </script>
     </div>
 @endsection

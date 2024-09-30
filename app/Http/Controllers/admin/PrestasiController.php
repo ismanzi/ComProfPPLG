@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\Prestasi;
+use App\Models\Achievement;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\Facades\SEO;
@@ -19,9 +19,9 @@ class PrestasiController extends Controller
         //
         SEO::title ('Data Prestasi');
 
-        $achievement = Prestasi::get();
+        $achievement = Achievement::get();
         return view('pages.admin.achievement.index',[
-            'prestasi'=>SpladeTable:: for (Prestasi::class)
+            'prestasi'=>SpladeTable:: for (Achievement::class)
             -> column('id')
             -> column('name')
             ->column('subjek')
@@ -41,7 +41,7 @@ class PrestasiController extends Controller
     {
         //
         SEO::title('Tambah Prestasi');
-        $achievement = Prestasi::all();
+        $achievement = Achievement::all();
         return view ('pages.admin.achievement.create', compact ('achievement'));
     }
 
@@ -56,7 +56,7 @@ class PrestasiController extends Controller
         $request->image1->move(public_path('storage/achievement/images'), $gambarprestasi1);
         $request->image2->move(public_path('storage/achievement/images'), $gambarprestasi2);
 
-        Prestasi::create([
+        Achievement::create([
             'name' => $request -> name,
             'image1'=> $gambarprestasi1,
             'image2'=> $gambarprestasi2,
@@ -89,7 +89,7 @@ class PrestasiController extends Controller
     public function edit(string $id)
     {
         //
-        $achievement = Prestasi::findOrFail($id);
+        $achievement = Achievement::findOrFail($id);
 
         SEO::title('Edit Prestasi');
 
@@ -102,7 +102,7 @@ class PrestasiController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $achievement = Prestasi::findOrFail($id);
+        $achievement = Achievement::findOrFail($id);
 
         // Image Processing
         if ($request->image1) {
@@ -139,7 +139,7 @@ class PrestasiController extends Controller
     public function destroy(string $id)
     {
         //
-        $achievement = Prestasi::findOrFail($id);
+        $achievement = Achievement::findOrFail($id);
 
         $achievement->delete();
 

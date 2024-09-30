@@ -60,36 +60,36 @@
                             <i class="fa-solid fa-trophy" style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Achievement</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subjectindex') }}">
+                        {{-- <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subject.index') }}">
                             <i class="fa-solid fa-book" style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Subject</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projekindex') }}">
+                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}" href="{{ route('pages.admin.alumniindex') }}">
+                        <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}" href="{{ route('pages.admin.alumni.index') }}">
                             <i class="fa-solid fa-user-graduate" style="color: {{ Request::is('alumni*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Alumni</span>
-                        </a>
-                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.newsindex') }}">
+                        </a> --}}
+                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.news.index') }}">
                             <i class="fa-solid fa-newspaper" style="color: {{ Request::is('news*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">News</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staffindex') }}">
+                        {{-- <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.commentindex') }}">
+                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.comment.index') }}">
                             <i class="fa-solid fa-comment-dots" style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Comment</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Settings Collapse Menu -->
-            <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
+            {{-- <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -98,7 +98,7 @@
                 <div id="collapseUtilities" class="collapse {{ Request::is('konfig*') ? 'show' : '' }}"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfigindex') }}">
+                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfig.index') }}">
                             <i class="fa-solid fa-globe" style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Configuration</span>
                         </a>
@@ -108,7 +108,7 @@
                             </a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
