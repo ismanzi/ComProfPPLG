@@ -56,7 +56,7 @@
                     class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievementindex') }}">
+                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievement.index') }}">
                             <i class="fa-solid fa-trophy" style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Achievement</span>
                         </a>
