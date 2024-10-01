@@ -1,19 +1,16 @@
 @extends('pages.admin.index')
 
-@section('title', 'View Achievement')
+@section('title', 'View Subject')
 
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card border-left-primary shadow mb-4">
         <div class="card-body">
-            <h3>{{ $achievement->name }}</h3>
-            <p><strong>Posisi:</strong> {{ $achievement->position }}</p>
-            <p><strong>Bidang:</strong> {{ $achievement->area }}</p>
-            <p><strong>Tingkat:</strong> {{ $achievement->level }}</p>
-            <p><strong>Penyelenggara:</strong> {{ $achievement->organizer }}</p>
-            <p><strong>Tanggal:</strong> {{ $achievement->date }}</p>
-            <p><strong>Peserta:</strong> {{ $achievement->participant }}</p>
-            <p><strong>Deskripsi:</strong> {{ $achievement->desc }}</p>
-            <img src="{{ asset('path_to_your_images/' . $achievement->image) }}" alt="{{ $achievement->name }}">
+            <img src="{{ asset('storage/' . $subject->image) }}" alt="{{ $subject->name }}" class="img-fluid">
+            <br><br>
+            <p><strong>Nama:</strong> {{ $subject->name }}</p>
+            <p><strong>Kelas:</strong> {{ $subject->class }}</p>
+            <p><strong>Jumlah Jam Per Minggu:</strong> {{ $subject->hour }}</p>
+            <p><strong>Deskripsi:</strong> {{ $subject->desc }}</p>
         </div>
     </div>
 @endsection

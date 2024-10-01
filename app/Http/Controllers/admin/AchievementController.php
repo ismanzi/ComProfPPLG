@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class AchievementController extends Controller
 {
     /**
-     * Display a listing of the achievements.
+     * Display a listing of the resource.
      */
     public function index()
     {
@@ -19,7 +19,7 @@ class AchievementController extends Controller
     }
 
     /**
-     * Show the form for creating a new achievement.
+     * Show the form for creating a new resource.
      */
     public function create()
     {
@@ -27,7 +27,7 @@ class AchievementController extends Controller
     }
 
     /**
-     * Store a newly created achievement in storage.
+     * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {

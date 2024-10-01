@@ -56,15 +56,25 @@
                     class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}" href="{{ route('pages.admin.achievement.index') }}">
-                            <i class="fa-solid fa-trophy" style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
+                        <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}"
+                            href="{{ route('pages.admin.achievement.index') }}">
+                            <i class="fa-solid fa-trophy"
+                                style="color: {{ Request::is('achievement*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Achievement</span>
                         </a>
-                        {{-- <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}" href="{{ route('pages.admin.subject.index') }}">
-                            <i class="fa-solid fa-book" style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
+                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}"
+                            href="{{ route('pages.admin.news.index') }}">
+                            <i class="fa-solid fa-newspaper"
+                                style="color: {{ Request::is('news*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">News</span>
+                        </a>
+                        <a class="collapse-item {{ Request::is('subject*') ? 'active' : '' }}"
+                            href="{{ route('pages.admin.subject.index') }}">
+                            <i class="fa-solid fa-book"
+                                style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Subject</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
+                        {{-- <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
                         </a>
@@ -72,10 +82,6 @@
                             <i class="fa-solid fa-user-graduate" style="color: {{ Request::is('alumni*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Alumni</span>
                         </a> --}}
-                        <a class="collapse-item {{ Request::is('news*') ? 'active' : '' }}" href="{{ route('pages.admin.news.index') }}">
-                            <i class="fa-solid fa-newspaper" style="color: {{ Request::is('news*') ? '#4e73df' : '#858796' }};"></i>
-                            <span style="margin-left: 8px;">News</span>
-                        </a>
                         {{-- <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
@@ -190,7 +196,7 @@
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
-                          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
                                 <a class="dropdown-item" href="#">

@@ -5,7 +5,8 @@ use App\Http\Controllers\admin\PagesController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\admin\AchievementController;
 use App\Http\Controllers\admin\NewsController;
-
+use App\Http\Controllers\admin\SubjectController;
+use App\Http\Controllers\admin\SubjekController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,56 +19,16 @@ use App\Http\Controllers\admin\NewsController;
 |
 */
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
 Route::get('/', function () {
     return view('pages.admin.dashboard.index');
 });
+
 Route::get('/login', function () {
     return view('login');
 });
 
 // Dashboard Routes
 Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
-
-// Configuration Routes
-Route::prefix('konfig')->name('pages.admin.konfig')->group(function () {
-    Route::get('/', [PagesController::class, 'konfig'])->name('index');
-    Route::get('/edit', [PagesController::class, 'konfigedit'])->name('edit');
-});
-
-// Staff Routes
-Route::prefix('staff')->name('pages.admin.staff')->group(function () {
-    Route::get('/', [PagesController::class, 'staff'])->name('index');
-    Route::get('/create', [PagesController::class, 'staffcreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'staffedit'])->name('edit');
-    Route::get('/view', [PagesController::class, 'staffview'])->name('view');
-});
-
-// Alumni Routes
-Route::prefix('alumni')->name('pages.admin.alumni')->group(function () {
-    Route::get('/', [PagesController::class, 'alumni'])->name('index');
-    Route::get('/create', [PagesController::class, 'alumnicreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'alumniedit'])->name('edit');
-    Route::get('/view', [PagesController::class, 'alumniview'])->name('view');
-});
-
-// Subject Routes
-Route::prefix('subject')->name('pages.admin.subject')->group(function () {
-    Route::get('/', [PagesController::class, 'subject'])->name('index');
-    Route::get('/create', [PagesController::class, 'subjectcreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'subjectedit'])->name('edit');
-    Route::get('/view', [PagesController::class, 'subjectview'])->name('view');
-});
-
-// Project Routes
-Route::prefix('projek')->name('pages.admin.projek')->group(function () {
-    Route::get('/', [PagesController::class, 'projek'])->name('index');
-    Route::get('/create', [PagesController::class, 'projekcreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'projekedit'])->name('edit');
-    Route::get('/view', [PagesController::class, 'projekview'])->name('view');
-});
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
@@ -91,18 +52,13 @@ Route::prefix('news')->group(function () {
     Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });
 
-// Comment Routes
-Route::prefix('comment')->name('pages.admin.comment')->group(function () {
-    Route::get('/', [PagesController::class, 'comment'])->name('index');
-    Route::get('/create', [PagesController::class, 'commentcreate'])->name('create');
-    Route::get('/edit', [PagesController::class, 'commentedit'])->name('edit');
-    Route::get('/view', [PagesController::class, 'commentview'])->name('view');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/welcome', function () {
-    return view('welcome');
+// Subject Routes
+Route::prefix('subject')->group(function () {
+    Route::get('/', [SubjectController::class, 'index'])->name('pages.admin.subject.index');
+    Route::get('/create', [SubjectController::class, 'create'])->name('pages.admin.subject.create');
+    Route::post('/', [SubjectController::class, 'store'])->name('subject.store');
+    Route::get('/{id}/view', [SubjectController::class, 'view'])->name(('pages.admin.subject.view'));
+    Route::get('/{id}/edit', [SubjectController::class, 'edit'])->name('pages.admin.subject.edit');
+    Route::put('/{id}', [SubjectController::class, 'update'])->name('subject.update');
+    Route::delete('/{id}', [SubjectController::class, 'destroy'])->name('subject.destroy');
 });

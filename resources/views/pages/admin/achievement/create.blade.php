@@ -5,7 +5,7 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('achievement.store') }}" method="POST" enctype="multipart/form-data"> <!-- Add action and method -->
+            <form action="{{ route('achievement.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
