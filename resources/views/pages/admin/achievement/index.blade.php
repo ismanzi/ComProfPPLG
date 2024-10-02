@@ -34,20 +34,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($achievements as $achievement)
+                        @foreach ($achievement as $achievements)
                             <tr>
-                                <td>{{ $achievement->name }}</td>
-                                <td>{{ $achievement->position }}</td>
-                                <td>{{ $achievement->area }}</td>
-                                <td>{{ $achievement->level }}</td>
-                                <td>{{ $achievement->organizer }}</td>
-                                <td>{{ \Carbon\Carbon::parse($achievement->date)->format('d-m-Y') }}</td>
+                                <td>{{ $achievements->name }}</td>
+                                <td>{{ $achievements->position }}</td>
+                                <td>{{ $achievements->area }}</td>
+                                <td>{{ $achievements->level }}</td>
+                                <td>{{ $achievements->organizer }}</td>
+                                <td>{{ \Carbon\Carbon::parse($achievements->date)->format('d-m-Y') }}</td>
                                 <td>
-                                    <a href="{{ route('pages.admin.achievement.view', $achievement->id) }}"
+                                    <a href="{{ route('pages.admin.achievement.view', $achievements->id) }}"
                                         class="btn btn-info">View</a>
-                                    <a href="{{ route('pages.admin.achievement.edit', $achievement->id) }}"
+                                    <a href="{{ route('pages.admin.achievement.edit', $achievements->id) }}"
                                         class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('achievement.destroy', $achievement->id) }}" method="POST"
+                                    <form action="{{ route('achievement.destroy', $achievements->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')

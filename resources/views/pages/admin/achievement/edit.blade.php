@@ -33,12 +33,19 @@
                     <label for="level" class="form-label">Tingkat</label>
                     <select class="form-select" id="level" name="level" required>
                         <option value="" disabled selected>Pilih Tingkat</option>
-                        <option value="Sekolah" {{ old('level', $achievement->level) == 'Sekolah' ? 'selected' : '' }}>Sekolah</option>
-                        <option value="Kecamatan" {{ old('level', $achievement->level) == 'Kecamatan' ? 'selected' : '' }}>Kecamatan</option>
-                        <option value="Kabupaten" {{ old('level', $achievement->level) == 'Kabupaten' ? 'selected' : '' }}>Kabupaten</option>
-                        <option value="Provinsi" {{ old('level', $achievement->level) == 'Provinsi' ? 'selected' : '' }}>Provinsi</option>
-                        <option value="Nasional" {{ old('level', $achievement->level) == 'Nasional' ? 'selected' : '' }}>Nasional</option>
-                        <option value="Internasional" {{ old('level', $achievement->level) == 'Internasional' ? 'selected' : '' }}>Internasional</option>
+                        <option value="Sekolah" {{ old('level', $achievement->level) == 'Sekolah' ? 'selected' : '' }}>
+                            Sekolah</option>
+                        <option value="Kecamatan" {{ old('level', $achievement->level) == 'Kecamatan' ? 'selected' : '' }}>
+                            Kecamatan</option>
+                        <option value="Kabupaten" {{ old('level', $achievement->level) == 'Kabupaten' ? 'selected' : '' }}>
+                            Kabupaten</option>
+                        <option value="Provinsi" {{ old('level', $achievement->level) == 'Provinsi' ? 'selected' : '' }}>
+                            Provinsi</option>
+                        <option value="Nasional" {{ old('level', $achievement->level) == 'Nasional' ? 'selected' : '' }}>
+                            Nasional</option>
+                        <option value="Internasional"
+                            {{ old('level', $achievement->level) == 'Internasional' ? 'selected' : '' }}>Internasional
+                        </option>
                     </select>
                 </div>
 
@@ -61,7 +68,8 @@
                         <label class="custom-file-label" for="image">Choose file</label>
                     </div>
                     @if ($achievement->image)
-                        <p class="mt-2">Current image: <a href="{{ asset('storage/' . $achievement->image) }}" target="_blank">View Image</a></p>
+                        <img src="{{ asset('storage/' . $achievement->image) }}" alt="Foto Alumni" width="100"
+                            height="100">
                     @endif
                 </div>
 

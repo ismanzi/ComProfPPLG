@@ -14,8 +14,8 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        $achievements = Achievement::all();
-        return view('pages.admin.achievement.index', compact('achievements'));
+        $achievement = Achievement::all();
+        return view('pages.admin.achievement.index', compact('achievement'));
     }
 
     /**
@@ -29,7 +29,7 @@ class AchievementController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Achievement $achievement)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -45,10 +45,13 @@ class AchievementController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $validatedData['image'] = $request->file('image')->store('images/achievements');
+            if ($achievement->image) {
+                Storage::delete($achievement->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('images/achievements', 'public');
         }
 
-        Achievement::create($validatedData);
+        $achievement = Achievement::create($validatedData);
 
         return redirect()->route('pages.admin.achievement.index')->with('success', 'Achievement created successfully!');
     }
@@ -84,13 +87,10 @@ class AchievementController extends Controller
 
         // If a new image file is uploaded, delete the old image and upload the new one
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
             if ($achievement->image) {
                 Storage::delete($achievement->image);
             }
-
-            // Save the new image
-            $validData['image'] = $request->file('image')->store('images/achievements');
+            $validData['image'] = $request->file('image')->store('images/achievement', 'public');
         }
 
         // Update data in the database

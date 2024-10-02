@@ -42,11 +42,8 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" required>
+                        <input type="file" class="custom-file-input" id="image" name="image">
                         <label class="custom-file-label" for="image">Choose file</label>
-                        @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
                     </div>
                 </div>
 
