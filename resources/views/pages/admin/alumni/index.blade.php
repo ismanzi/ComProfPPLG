@@ -5,23 +5,87 @@
 @section('btn-title', 'Create')
 
 @section('btn-icon')
-<i class="fa-solid fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
 @endsection
 
 @section('link-btn-title')
-<a href="{{ route('pages.admin.alumnicreate') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-    @yield('btn-icon') @yield('btn-title')
-</a>
+    <a href="{{ route('alumni.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        @yield('btn-icon') @yield('btn-title')
+    </a>
 @endsection
 
 @section('content')
-<!-- Basic Card Example -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-regular text-primary">Data Alumni</h6>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-regular text-primary">Data Alumni</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="alumniTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Tahun Kelulusan</th>
+                            <th>Kegiatan Saat Ini</th>
+                            <th>Kontak</th>
+                            <th>Foto</th>
+                            <th>Penghargaan</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($alumnis as $alumni)
+                            <tr>
+                                <td>{{ $alumni->name }}</td>
+                                <td>{{ $alumni->yearOfGraduation }}</td>
+                                <td>{{ $alumni->currentActivity }}</td>
+                                <td>{{ $alumni->contact }}</td>
+                                <td>
+                                    @if ($alumni->image)
+                                        <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100"
+                                            height="100">
+                                    @else
+                                        <p>No Photo</p>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($alumni->achievements->count() > 0)
+                                        @foreach ($alumni->achievements as $achievement)
+                                            {{ $achievement->name }}<br>
+                                        @endforeach
+                                    @else
+                                        <p>No Achievements</p>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('alumni.view', $alumni->id) }}" class="btn btn-info">View</a>
+                                    <a href="{{ route('alumni.edit', $alumni->id) }}" class="btn btn-warning">Edit</a>
+                                    <form action="{{ route('alumni.destroy', $alumni->id) }}" method="POST"
+                                        style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <h6 class="m-0 font-weight-regular">No data found.</h6>
-    </div>
-</div>
+
+@section('scripts')
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#alumniTable').DataTable({
+                "pageLength": 10, // Menampilkan 10 entri per halaman
+                "searching": true, // Fitur pencarian
+            });
+        });
+    </script>
+@endsection
 @endsection
