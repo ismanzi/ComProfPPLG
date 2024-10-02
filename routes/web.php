@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\PagesController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\admin\AchievementController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\admin\SubjectController;
-use App\Http\Controllers\admin\SubjekController;
+use App\Http\Controllers\admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +26,6 @@ Route::get('/login', function () {
 });
 
 // Dashboard Routes
-Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
