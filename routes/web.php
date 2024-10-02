@@ -26,6 +26,7 @@ Route::get('/login', function () {
 });
 
 // Dashboard Routes
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
