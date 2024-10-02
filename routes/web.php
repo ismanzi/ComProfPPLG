@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\AchievementController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\admin\SubjectController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\CommentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +62,13 @@ Route::prefix('subject')->group(function () {
     Route::put('/{id}', [SubjectController::class, 'update'])->name('subject.update');
     Route::delete('/{id}', [SubjectController::class, 'destroy'])->name('subject.destroy');
 });
+
+// Comment Routes
+Route::prefix('comment')->group(function () {
+    Route::get('/', [CommentController::class, 'index'])->name('pages.admin.comment.index');
+    Route::get('/create', [CommentController::class, 'create'])->name('pages.admin.comment.create');
+    Route::post('/', [CommentController::class, 'store'])->name('comment.store');
+    Route::get('/{id}/view', [CommentController::class, 'view'])->name('pages.admin.comment.view');
+    Route::delete('comment/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+});
+

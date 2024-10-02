@@ -3,6 +3,8 @@
 @section('title', 'Create Comment')
 
 @section('content')
+<form action="{{ route('comment.store') }}" method="POST">
+    @csrf
     <div class="card shadow mb-4">
         <div class="card-body">
             <form>
@@ -24,6 +26,7 @@
             </form>
 
         </div>
+    </form>
 
         <!-- JavaScript -->
         <script>

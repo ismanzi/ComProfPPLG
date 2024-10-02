@@ -74,6 +74,12 @@
                                 style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Subject</span>
                         </a>
+                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}"
+                        href="{{ route('pages.admin.comment.index') }}">
+                        <i class="fa-solid fa-comment"
+                            style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
+                        <span style="margin-left: 8px;">Comment</span>
+                    </a>
                         {{-- <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
