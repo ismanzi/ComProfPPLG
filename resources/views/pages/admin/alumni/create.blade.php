@@ -46,6 +46,14 @@
                         <label class="custom-file-label" for="image">Choose file</label>
                     </div>
                 </div>
+                {{-- Mengarah ke tabel Achievement --}}
+                <div class="mb-3">
+                    <label for="achievement" class="form-label">Penghargaan selama di Sekolah</label>
+                    <select class="form-control" id="achievement" name="achievement">
+                        <option value="">Pilih Penghargaan</option>
+                        @foreach ($achievements as $achievement)
+                            <option value="{{ $achievement->id }}">{{ $achievement->name }}</option>
+                        @endforeach
 
                 <div class="form-group">
                     <label for="achievements">Penghargaan selama di Sekolah</label>
