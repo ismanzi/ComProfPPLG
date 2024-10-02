@@ -95,7 +95,7 @@
             </li>
 
             <!-- Nav Item - Settings Collapse Menu -->
-            {{-- <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -114,7 +114,7 @@
                             </a>
                     </div>
                 </div>
-            </li> --}}
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
