@@ -7,7 +7,7 @@
         <div class="card-body">
             <img src="{{ asset('storage/' . $subject->image) }}" alt="{{ $subject->name }}" class="img-fluid">
             <br><br>
-            <p><strong>Nama Mata Pelajaran:</strong> {{ $subject->name }}</p>
+            <p><strong>Nama:</strong> {{ $subject->name }}</p>
             <p><strong>Kelas:</strong> {{ $subject->class }}</p>
             <p><strong>Jumlah Jam Per Minggu:</strong> {{ $subject->hour }}</p>
             <p><strong>Deskripsi:</strong> {{ $subject->desc }}</p>

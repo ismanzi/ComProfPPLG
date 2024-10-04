@@ -6,7 +6,9 @@ use App\Http\Controllers\admin\{
     AchievementController,
     NewsController,
     SubjectController,
-    AlumniController
+    AlumniController,
+    DashboardController,
+    CommentController,
 };
 
 /*
@@ -20,16 +22,15 @@ use App\Http\Controllers\admin\{
 |
 */
 
-Route::get('/', function () {
-    return view('pages.admin.dashboard.index');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
 Route::get('/login', function () {
     return view('login');
 });
 
 // Dashboard Routes
-// Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('pages.admin.dashboard.index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
+
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
@@ -73,4 +74,12 @@ Route::prefix('alumni')->group(function () {
     Route::get('/{id}/edit', [AlumniController::class, 'edit'])->name('alumni.edit');
     Route::put('/{id}', [AlumniController::class, 'update'])->name('alumni.update');
     Route::delete('/{id}', [AlumniController::class, 'destroy'])->name('alumni.destroy');
+});
+
+Route::prefix('comment')->group(function () {
+    Route::get('/', [CommentController::class, 'index'])->name('pages.admin.comment.index');
+    Route::get('/create', [CommentController::class, 'create'])->name('pages.admin.comment.create');
+    Route::post('/', [CommentController::class, 'store'])->name('comment.store');
+    Route::get('/{id}/view', [CommentController::class, 'view'])->name('pages.admin.comment.view');
+    Route::delete('comment/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
 });

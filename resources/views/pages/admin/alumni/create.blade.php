@@ -42,18 +42,13 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image">
+                        <input type="file" class="custom-file-input" id="image" name="image" required>
                         <label class="custom-file-label" for="image">Choose file</label>
+                        @error('image')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                {{-- Mengarah ke tabel Achievement --}}
-                <div class="mb-3">
-                    <label for="achievement" class="form-label">Penghargaan selama di Sekolah</label>
-                    <select class="form-control" id="achievement" name="achievement">
-                        <option value="">Pilih Penghargaan</option>
-                        @foreach ($achievements as $achievement)
-                            <option value="{{ $achievement->id }}">{{ $achievement->name }}</option>
-                        @endforeach
 
                 <div class="form-group">
                     <label for="achievements">Penghargaan selama di Sekolah</label>

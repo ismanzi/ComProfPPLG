@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ Request::is('dashboard*') ? 'active' : '' }}">
-                {{-- <a class="nav-link" href="{{ route('pages.admin.dashboard.index') }}"> --}}
+                <a class="nav-link" href="{{ route('pages.admin.dashboard.index') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
                 </a>
@@ -74,29 +74,25 @@
                                 style="color: {{ Request::is('subject*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Subject</span>
                         </a>
-                        {{-- <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}"
-                            href="{{ route('pages.admin.comment.index') }}">
-                            <i class="fa-solid fa-comment"
-                                style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
-                            <span style="margin-left: 8px;">Comment</span>
-                        </a> --}}
-                        {{-- <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
-                            <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
-                            <span style="margin-left: 8px;">Project</span>
-                        </a> --}}
                         <a class="collapse-item {{ Request::is('alumni*') ? 'active' : '' }}"
                             href="{{ route('alumni.index') }}">
                             <i class="fa-solid fa-user-graduate"
                                 style="color: {{ Request::is('alumni*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Alumni</span>
                         </a>
+                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}"
+                            href="{{ route('pages.admin.comment.index') }}">
+                            <i class="fa-solid fa-comment"
+                                style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Comment</span>
+                        </a>
+                        {{-- <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
+                            <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
+                            <span style="margin-left: 8px;">Project</span>
+                        </a> --}}
                         {{-- <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
-                        </a>
-                        <a class="collapse-item {{ Request::is('comment*') ? 'active' : '' }}" href="{{ route('pages.admin.comment.index') }}">
-                            <i class="fa-solid fa-comment-dots" style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
-                            <span style="margin-left: 8px;">Comment</span>
                         </a> --}}
                     </div>
                 </div>

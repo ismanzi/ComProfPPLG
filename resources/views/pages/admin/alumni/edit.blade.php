@@ -43,7 +43,7 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" required>
+                        <input type="file" class="custom-file-input" id="image" name="image">
                         <label class="custom-file-label" for="image">Choose file</label>
                         @if ($alumni->image)
                             <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100"
@@ -54,6 +54,7 @@
                         @enderror
                     </div>
                 </div>
+                <br>
                 <div class="mb-3">
                     <label for="achievements" class="form-label">Penghargaan selama di Sekolah</label>
                     <select class="form-control" id="achievements" name="achievements[]" multiple>
