@@ -26,6 +26,7 @@
                         <tr>
                             <th>Judul Artikel</th>
                             <th>URL Website</th>
+                            <th>Tanggal</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -34,6 +35,7 @@
                             <tr>
                                 <td>{{ $newss->title }}</td>
                                 <td>{{ $newss->slug }}</td>
+                                <td>{{ \Carbon\Carbon::parse($newss->date)->format('d-m-Y') }}</td>
                                 <td>
                                     <a href="{{ route('pages.admin.news.view', $newss->id) }}" class="btn btn-info">View</a>
                                     <a href="{{ route('pages.admin.news.edit', $newss->id) }}"

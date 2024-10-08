@@ -9,6 +9,8 @@ use App\Http\Controllers\admin\{
     AlumniController,
     DashboardController,
     CommentController,
+    ProjectController,
+    StaffController
 };
 
 /*
@@ -74,6 +76,28 @@ Route::prefix('alumni')->group(function () {
     Route::get('/{id}/edit', [AlumniController::class, 'edit'])->name('alumni.edit');
     Route::put('/{id}', [AlumniController::class, 'update'])->name('alumni.update');
     Route::delete('/{id}', [AlumniController::class, 'destroy'])->name('alumni.destroy');
+});
+
+// Project Routes
+Route::prefix('project')->group(function () {
+    Route::get('/', [ProjectController::class, 'index'])->name('projek.index');
+    Route::get('/create', [ProjectController::class, 'create'])->name('projek.create');
+    Route::post('/', [ProjectController::class, 'store'])->name('projek.store');
+    Route::get('/{id}/view', [ProjectController::class, 'show'])->name('projek.view');
+    Route::get('/{id}/edit', [ProjectController::class, 'edit'])->name('projek.edit');
+    Route::put('/{id}', [ProjectController::class, 'update'])->name('projek.update');
+    Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projek.destroy');
+});
+
+// Staff Routes
+Route::prefix('Staff')->group(function () {
+    Route::get('/', [StaffController::class, 'index'])->name('Staff.index');
+    Route::get('/create', [StaffController::class, 'create'])->name('Staff.create');
+    Route::post('/', [StaffController::class, 'store'])->name('Staff.store');
+    Route::get('/{id}/view', [StaffController::class, 'show'])->name('Staff.view');
+    Route::get('/{id}/edit', [StaffController::class, 'edit'])->name('Staff.edit');
+    Route::put('/{id}', [StaffController::class, 'update'])->name('Staff.update');
+    Route::delete('/{id}', [StaffController::class, 'destroy'])->name('Staff.destroy');
 });
 
 Route::prefix('comment')->group(function () {

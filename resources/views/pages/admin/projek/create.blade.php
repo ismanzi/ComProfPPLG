@@ -5,7 +5,8 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form>
+            <form action="{{ route('projek.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama Projek</label>
                     <input type="text" class="form-control" id="name" name="name" required>
@@ -16,12 +17,15 @@
                 </div>
                       {{-- Mengarah ke tabel subject --}}
                       <div class="mb-3">
-                        <label for="achievement" class="form-label">Subjek</label>
-                        <select class="form-control" id="achievement" name="achievement">
-                            <option value="">Pilih Subjek</option>
-                            {{-- @foreach ($subject as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                            @endforeach --}}
+                        <label for="subject" class="form-label">Subjek</label>
+                        <select class="form-control" id="subject" name="subject">
+                            <option value="">No Subject</option>
+                            @foreach ($subject as $subjects)
+                                <option value="{{ $subjects->id }}"
+                                    {{ in_array($subjects->id, old('subjects', [])) ? 'selected' : '' }}>
+                                    {{ $subjects->name }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 <div class="mb-3">

@@ -37,6 +37,7 @@ class NewsController extends Controller
             'slug' => 'required|string|max:255|unique:news,slug',
             'desc' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'date' => 'required|date',
         ]);
 
         // Process image upload

@@ -10,6 +10,7 @@
             <p><strong>Nama:</strong> {{ $news->title }}</p>
             <p><strong>Posisi:</strong> {{ $news->slug }}</p>
             <p><strong>Bidang:</strong> {{ $news->desc }}</p>
+            <p><strong>Tanggal:</strong> {{ $news->date }}</p>
         </div>
     </div>
 @endsection

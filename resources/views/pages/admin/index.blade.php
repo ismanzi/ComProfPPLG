@@ -86,14 +86,14 @@
                                 style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Comment</span>
                         </a>
-                        {{-- <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('pages.admin.projek.index') }}">
+                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('projek.index') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
-                        </a> --}}
-                        {{-- <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('pages.admin.staff.index') }}">
+                        </a> 
+                         <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('Staff.index') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
-                        </a> --}}
+                        </a> 
                     </div>
                 </div>
             </li>
