@@ -89,16 +89,16 @@
                         <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('projek.index') }}">
                             <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
-                        </a> 
+                        </a>
                          <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('Staff.index') }}">
                             <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
-                        </a> 
+                        </a>
                     </div>
                 </div>
             </li>
 
-            {{-- <!-- Nav Item - Settings Collapse Menu -->
+            <!-- Nav Item - Settings Collapse Menu -->
             <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -118,7 +118,7 @@
                             </a>
                     </div>
                 </div>
-            </li> --}}
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

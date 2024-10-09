@@ -10,7 +10,8 @@ use App\Http\Controllers\admin\{
     DashboardController,
     CommentController,
     ProjectController,
-    StaffController
+    StaffController,
+    ConfigController,
 };
 
 /*
@@ -106,4 +107,13 @@ Route::prefix('comment')->group(function () {
     Route::post('/', [CommentController::class, 'store'])->name('comment.store');
     Route::get('/{id}/view', [CommentController::class, 'view'])->name('pages.admin.comment.view');
     Route::delete('comment/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+});
+
+//Routes konfig
+Route::prefix('configs')->group(function () {
+    Route::get('/', [ConfigController::class, 'index'])->name('pages.admin.konfig.index');
+    Route::get('/create', [ConfigController::class, 'create'])->name('pages.admin.konfig.create');
+    Route::post('/', [ConfigController::class, 'store'])->name('konfig.store');
+    Route::get('/{id}/view', [ConfigController::class, 'view'])->name('pages.admin.konfig.view');
+    Route::delete('configs/{id}', [ConfigController::class, 'destroy'])->name('konfig.destroy');
 });
