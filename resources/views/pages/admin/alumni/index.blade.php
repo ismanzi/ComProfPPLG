@@ -27,9 +27,7 @@
                             <th>Nama</th>
                             <th>Tahun Kelulusan</th>
                             <th>Kegiatan Saat Ini</th>
-                            <th>Kontak</th>
                             <th>Foto</th>
-                            <th>Penghargaan</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,22 +37,12 @@
                                 <td>{{ $alumni->name }}</td>
                                 <td>{{ $alumni->yearOfGraduation }}</td>
                                 <td>{{ $alumni->currentActivity }}</td>
-                                <td>{{ $alumni->contact }}</td>
                                 <td>
                                     @if ($alumni->image)
                                         <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100"
                                             height="100">
                                     @else
                                         <p>No Photo</p>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($alumni->achievements->count() > 0)
-                                        @foreach ($alumni->achievements as $achievement)
-                                            {{ $achievement->name }}<br>
-                                        @endforeach
-                                    @else
-                                        <p>No Achievements</p>
                                     @endif
                                 </td>
                                 <td>

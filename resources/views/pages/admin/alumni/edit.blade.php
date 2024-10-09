@@ -99,6 +99,18 @@
                 }
             }
 
+            $('#achievements').on('change', function() {
+                var blankOptionSelected = $(this).find('option[value=""]:selected').length > 0;
+                var selectedOptions = $(this).val();
+                if (blankOptionSelected) {
+                    console.log('Blank option selected');
+                } else if (selectedOptions.length === 1) {
+                    console.log('One achievement selected:', selectedOptions);
+                } else {
+                    console.log('Multiple achievements selected:', selectedOptions);
+                }
+            });
+
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
                 var fileName = document.getElementById("image").files[0].name;
                 var nextSibling = e.target.nextElementSibling;

@@ -39,8 +39,8 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ Request::is('dashboard*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('pages.admin.dashboard.index') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
                 </a>
             </li>
 
@@ -86,12 +86,16 @@
                                 style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Comment</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}" href="{{ route('projek.index') }}">
-                            <i class="fa-solid fa-diagram-project" style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
+                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}"
+                            href="{{ route('projek.index') }}">
+                            <i class="fa-solid fa-diagram-project"
+                                style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
                         </a>
-                         <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}" href="{{ route('Staff.index') }}">
-                            <i class="fa-solid fa-address-card" style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
+                        <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}"
+                            href="{{ route('staff.index') }}">
+                            <i class="fa-solid fa-address-card"
+                                style="color: {{ Request::is('staff*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Staff</span>
                         </a>
                     </div>
@@ -108,14 +112,16 @@
                 <div id="collapseUtilities" class="collapse {{ Request::is('konfig*') ? 'show' : '' }}"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}" href="{{ route('pages.admin.konfig.index') }}">
-                            <i class="fa-solid fa-globe" style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
+                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}"
+                            href="{{ route('pages.admin.konfig.index') }}">
+                            <i class="fa-solid fa-globe"
+                                style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Configuration</span>
                         </a>
-                            <a class="collapse-item" href="#">
-                                <i class="fa-solid fa-right-from-bracket" style="color: #858796;"></i>
-                                <span style="margin-left: 8px;">Logout</span>
-                            </a>
+                        <a class="collapse-item" href="#">
+                            <i class="fa-solid fa-right-from-bracket" style="color: #858796;"></i>
+                            <span style="margin-left: 8px;">Logout</span>
+                        </a>
                     </div>
                 </div>
             </li>
