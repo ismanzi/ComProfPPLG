@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('organizer');
             $table->date('date');
             $table->string('image')->nullable();
+            $table->string('categories');
             $table->text('participant')->nullable();
             $table->text('desc')->nullable();
             $table->timestamps();

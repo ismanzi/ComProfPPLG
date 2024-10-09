@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Achievement extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'position', 'area', 'level', 'organizer', 'date', 'image', 'participant', 'desc'];
+    protected $fillable = ['name', 'position', 'area', 'level', 'organizer', 'date', 'image', 'categories', 'participant', 'desc'];
 
     public function staff()
     {

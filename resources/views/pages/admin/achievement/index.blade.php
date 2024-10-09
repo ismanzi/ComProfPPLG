@@ -30,6 +30,7 @@
                             <th>Tingkat</th>
                             <th>Penyelenggara</th>
                             <th>Tanggal</th>
+                            <th>Kategori</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@
                                 <td>{{ $achievements->level }}</td>
                                 <td>{{ $achievements->organizer }}</td>
                                 <td>{{ \Carbon\Carbon::parse($achievements->date)->format('d-m-Y') }}</td>
+                                <td>{{ $achievements->categories }}</td>
                                 <td>
                                     <a href="{{ route('pages.admin.achievement.view', $achievements->id) }}"
                                         class="btn btn-info">View</a>

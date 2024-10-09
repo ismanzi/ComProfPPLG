@@ -55,6 +55,15 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="level" class="form-label">Kategori</label>
+                    <select class="form-control" id="level" name="categories" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option value="Individu">Individu</option>
+                        <option value="Tim">Tim</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="participant" class="form-label">Peserta</label>
                     <textarea class="form-control" id="participant" name="participant" rows="4"></textarea>
                 </div>

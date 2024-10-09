@@ -74,6 +74,17 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="level" class="form-label">Kategori</label>
+                    <select class="form-select" id="level" name="categories" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option value="Individu" {{ old('categories', $achievement->categories) == 'Individu' ? 'selected' : '' }}>
+                            Individu</option>
+                        <option value="Tim" {{ old('categories', $achievement->categories) == 'Tim' ? 'selected' : '' }}>
+                            Tim</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="participant" class="form-label">Peserta</label>
                     <textarea class="form-control" id="participant" name="participant" rows="4">{{ old('participant', $achievement->participant) }}</textarea>
                 </div>

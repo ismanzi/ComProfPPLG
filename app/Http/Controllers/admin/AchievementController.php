@@ -39,6 +39,7 @@ class AchievementController extends Controller
             'organizer' => 'required|string|max:255',
             'date' => 'required|date',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'categories' => 'required',
             'participant' => 'nullable|string',
             'desc' => 'nullable|string',
         ]);

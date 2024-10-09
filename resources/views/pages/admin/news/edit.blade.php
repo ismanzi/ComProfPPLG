@@ -39,6 +39,12 @@
                     <textarea class="form-control" id="desc" name="desc" rows="4">{{ old('desc', $news->desc) }}</textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label for="date" class="form-label">Tanggal</label>
+                    <input type="date" class="form-control" id="date" name="date"
+                        value="{{ old('date', $news->date) }}" required>
+                </div>
+
                 <!-- Button Submit dan Cancel -->
                 <button type="submit" class="btn btn-primary">Save Changes</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>

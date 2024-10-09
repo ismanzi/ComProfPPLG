@@ -13,6 +13,7 @@
             <p><strong>Tingkat:</strong> {{ $achievement->level }}</p>
             <p><strong>Penyelenggara:</strong> {{ $achievement->organizer }}</p>
             <p><strong>Tanggal:</strong> {{ $achievement->date }}</p>
+            <p><strong>Kategori:</strong> {{ $achievement->categories }}</p>
             <p><strong>Peserta:</strong> {{ $achievement->participant }}</p>
             <p><strong>Deskripsi:</strong> {{ $achievement->desc }}</p>
         </div>
