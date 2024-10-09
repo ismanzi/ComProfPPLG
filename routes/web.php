@@ -91,14 +91,14 @@ Route::prefix('project')->group(function () {
 });
 
 // Staff Routes
-Route::prefix('Staff')->group(function () {
-    Route::get('/', [StaffController::class, 'index'])->name('Staff.index');
-    Route::get('/create', [StaffController::class, 'create'])->name('Staff.create');
-    Route::post('/', [StaffController::class, 'store'])->name('Staff.store');
-    Route::get('/{id}/view', [StaffController::class, 'show'])->name('Staff.view');
-    Route::get('/{id}/edit', [StaffController::class, 'edit'])->name('Staff.edit');
-    Route::put('/{id}', [StaffController::class, 'update'])->name('Staff.update');
-    Route::delete('/{id}', [StaffController::class, 'destroy'])->name('Staff.destroy');
+Route::prefix('staff')->group(function () {
+    Route::get('/', [StaffController::class, 'index'])->name('staff.index');
+    Route::get('/create', [StaffController::class, 'create'])->name('staff.create');
+    Route::post('/', [StaffController::class, 'store'])->name('staff.store');
+    Route::get('/{id}/view', [StaffController::class, 'show'])->name('staff.view');
+    Route::get('/{id}/edit', [StaffController::class, 'edit'])->name('staff.edit');
+    Route::put('/{id}', [StaffController::class, 'update'])->name('staff.update');
+    Route::delete('/{id}', [StaffController::class, 'destroy'])->name('staff.destroy');
 });
 
 Route::prefix('comment')->group(function () {
