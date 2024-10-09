@@ -8,13 +8,15 @@
             <form action="{{ route('konfig.store') }}" method="POST" enctype="multipart/form-data"> <!-- Add action and method -->
                 @csrf
 
-                <div class="mb-3">
-                    <label for="name" class="form-label">Total Murid Laki-Laki</label>
-                    <input type="number" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Total Murid Perempuan</label>
-                    <input type="number" class="form-control" id="name" name="name" required>
+                <div class="mb-3 row">
+                    <div class="col-md-6">
+                        <label for="total_laki" class="form-label">Total Murid Laki-Laki</label>
+                        <input type="number" class="form-control" id="total_laki" name="total_laki" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="total_perempuan" class="form-label">Total Murid Perempuan</label>
+                        <input type="number" class="form-control" id="total_perempuan" name="total_perempuan" required>
+                    </div>
                 </div>
 
                 <div class="mb-3">
