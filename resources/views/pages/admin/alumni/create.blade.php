@@ -9,32 +9,28 @@
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama Lulusan</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
-                        required>
+                    <input type="text" class="form-control" id="name" name="name" required>
                     @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="yearOfGraduation" class="form-label">Tahun Kelulusan</label>
-                    <input type="text" class="form-control" id="yearOfGraduation" name="yearOfGraduation"
-                        value="{{ old('yearOfGraduation') }}" required>
+                    <input type="text" class="form-control" id="yearOfGraduation" name="yearOfGraduation" required>
                     @error('yearOfGraduation')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="currentActivity" class="form-label">Kegiatan Saat Ini</label>
-                    <input type="text" class="form-control" id="currentActivity" name="currentActivity"
-                        value="{{ old('currentActivity') }}">
+                    <input type="text" class="form-control" id="currentActivity" name="currentActivity">
                     @error('currentActivity')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="contact" class="form-label">Kontak</label>
-                    <input type="text" class="form-control" id="contact" name="contact" value="{{ old('contact') }}"
-                        required>
+                    <input type="text" class="form-control" id="contact" name="contact" required>
                     @error('contact')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
