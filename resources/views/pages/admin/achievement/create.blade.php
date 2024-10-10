@@ -63,12 +63,15 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*"
-                            required>
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*" required>
                         <label class="custom-file-label" for="image">Choose file</label>
                     </div>
                 </div>
 
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
+                </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
@@ -85,7 +88,7 @@
                 }
             }
 
-            // Display the name of the selected image file and preview image in a new tab
+            // Display the name of the selected image file and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
                 var file = e.target.files[0];
                 var fileName = file.name;
@@ -95,8 +98,10 @@
                 // Create a URL object from the selected file
                 var imageURL = URL.createObjectURL(file);
 
-                // Open a new tab with the image preview
-                var imagePreviewWindow = window.open(imageURL);
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
             });
         </script>
     </div>

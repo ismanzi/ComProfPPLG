@@ -9,112 +9,105 @@
                 @csrf
                 @method('PUT')
 
-                <h5 class="card-title mb-4">Edit Achievement</h5>
-
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="name" name="name"
-                        value="{{ old('name', $achievement->name) }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="position" class="form-label">Posisi</label>
-                    <input type="text" class="form-control" id="position" name="position"
-                        value="{{ old('position', $achievement->position) }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="area" class="form-label">Bidang</label>
-                    <input type="text" class="form-control" id="area" name="area"
-                        value="{{ old('area', $achievement->area) }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="level" class="form-label">Tingkat</label>
-                    <select class="form-select" id="level" name="level" required>
-                        <option value="" disabled selected>Pilih Tingkat</option>
-                        <option value="Sekolah" {{ old('level', $achievement->level) == 'Sekolah' ? 'selected' : '' }}>
-                            Sekolah</option>
-                        <option value="Kecamatan" {{ old('level', $achievement->level) == 'Kecamatan' ? 'selected' : '' }}>
-                            Kecamatan</option>
-                        <option value="Kabupaten" {{ old('level', $achievement->level) == 'Kabupaten' ? 'selected' : '' }}>
-                            Kabupaten</option>
-                        <option value="Provinsi" {{ old('level', $achievement->level) == 'Provinsi' ? 'selected' : '' }}>
-                            Provinsi</option>
-                        <option value="Nasional" {{ old('level', $achievement->level) == 'Nasional' ? 'selected' : '' }}>
-                            Nasional</option>
-                        <option value="Internasional"
-                            {{ old('level', $achievement->level) == 'Internasional' ? 'selected' : '' }}>Internasional
-                        </option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="organizer" class="form-label">Penyelenggara</label>
-                    <input type="text" class="form-control" id="organizer" name="organizer"
-                        value="{{ old('organizer', $achievement->organizer) }}" required>
+                    <label for="title" class="form-label">Judul Pencapaian</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ $achievement->title }}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="date" name="date"
-                        value="{{ old('date', $achievement->date) }}" required>
+                    <input type="date" class="form-control" id="date" name="date" value="{{ $achievement->date }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image">
-                        <label class="custom-file-label" for="image">Choose file</label>
-                    </div>
-                    @if ($achievement->image)
-                        <img src="{{ asset('storage/' . $achievement->image) }}" alt="Foto Alumni" width="100"
-                            height="100">
-                    @endif
+                    <label for="area" class="form-label">Bidang</label>
+                    <input type="text" class="form-control" id="area" name="area" value="{{ $achievement->area }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="level" class="form-label">Kategori</label>
-                    <select class="form-select" id="level" name="categories" required>
-                        <option value="" disabled selected>Pilih Kategori</option>
-                        <option value="Individu" {{ old('categories', $achievement->categories) == 'Individu' ? 'selected' : '' }}>
-                            Individu</option>
-                        <option value="Tim" {{ old('categories', $achievement->categories) == 'Tim' ? 'selected' : '' }}>
-                            Tim</option>
+                    <label for="level" class="form-label">Tingkat</label>
+                    <select class="form-control" id="level" name="level" required>
+                        <option value="" disabled>Pilih Tingkat</option>
+                        <option value="Sekolah" {{ $achievement->level == 'Sekolah' ? 'selected' : '' }}>Sekolah</option>
+                        <option value="Kecamatan" {{ $achievement->level == 'Kecamatan' ? 'selected' : '' }}>Kecamatan</option>
+                        <option value="Kabupaten" {{ $achievement->level == 'Kabupaten' ? 'selected' : '' }}>Kabupaten</option>
+                        <option value="Provinsi" {{ $achievement->level == 'Provinsi' ? 'selected' : '' }}>Provinsi</option>
+                        <option value="Nasional" {{ $achievement->level == 'Nasional' ? 'selected' : '' }}>Nasional</option>
+                        <option value="Internasional" {{ $achievement->level == 'Internasional' ? 'selected' : '' }}>Internasional</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categories" class="form-label">Kategori</label>
+                    <select class="form-control" id="categories" name="categories" required>
+                        <option value="" disabled>Pilih Kategori</option>
+                        <option value="Individu" {{ $achievement->categories == 'Individu' ? 'selected' : '' }}>Individu</option>
+                        <option value="Tim" {{ $achievement->categories == 'Tim' ? 'selected' : '' }}>Tim</option>
                     </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="participant" class="form-label">Peserta</label>
-                    <textarea class="form-control" id="participant" name="participant" rows="4">{{ old('participant', $achievement->participant) }}</textarea>
+                    <textarea class="form-control" id="participant" name="participant" rows="4">{{ $achievement->participant }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="organizer" class="form-label">Penyelenggara</label>
+                    <input type="text" class="form-control" id="organizer" name="organizer" value="{{ $achievement->organizer }}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="desc" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="desc" name="desc" rows="4">{{ old('desc', $achievement->desc) }}</textarea>
+                    <textarea class="form-control" id="desc" name="desc" rows="4">{{ $achievement->desc }}</textarea>
                 </div>
 
-                <div>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                    <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
                 </div>
+
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    @if ($achievement->image)
+                        <img id="image-preview" src="{{ asset('storage/achievements/' . $achievement->image) }}" alt="Image Preview" style="max-width: 20%;" />
+                    @else
+                        <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
+                    @endif
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
             </form>
         </div>
-    </div>
 
-    <!-- JavaScript -->
-    <script>
-        function confirmCancel() {
-            const userConfirmed = confirm("Are you sure you want to cancel these changes?");
-            if (userConfirmed) {
-                window.history.back();
+        <!-- JavaScript -->
+        <script>
+            // Alert confirm discard changes
+            function confirmCancel() {
+                const userConfirmed = confirm("Are you sure you want to cancel these changes?");
+                if (userConfirmed) {
+                    window.history.back();
+                }
             }
-        }
 
-        document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-            var fileName = document.getElementById("image").files[0].name;
-            var nextSibling = e.target.nextElementSibling;
-            nextSibling.innerText = fileName;
-        });
-    </script>
+            // Display the name of the selected image file and show image preview
+            document.querySelector('.custom-file-input').addEventListener('change', function(e) {
+                var file = e.target.files[0];
+                var fileName = file.name;
+                var nextSibling = e.target.nextElementSibling;
+                nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
+            });
+        </script>
+    </div>
 @endsection
