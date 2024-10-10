@@ -5,7 +5,7 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('subject.store') }}" method="POST" enctype="multipart/form-data"> <!-- Add action and method -->
+            <form action="{{ route('subject.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -32,16 +32,21 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="desc" class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" required>
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*" required>
                         <label class="custom-file-label" for="image">Choose file</label>
                     </div>
                 </div>
 
+                <!-- Image Preview -->
                 <div class="mb-3">
-                    <label for="desc" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
+                    <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
@@ -59,11 +64,20 @@
                 }
             }
 
-            // Display the name of the selected image file
+            // Display name of selected image and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-                var fileName = document.getElementById("image").files[0].name;
+                var file = e.target.files[0];
+                var fileName = file.name;
                 var nextSibling = e.target.nextElementSibling;
                 nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
             });
         </script>
     </div>

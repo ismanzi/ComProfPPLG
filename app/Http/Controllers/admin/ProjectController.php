@@ -14,7 +14,6 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
         $project = Project::all();
         return view('pages.admin.projek.index', compact('project'));
     }
@@ -49,7 +48,7 @@ class ProjectController extends Controller
         if ($request->hasFile('image')) {
             $validData['image'] = $request->file('image')->store('images/project');
         }
-        
+
         $project = Project::create($validData);
 
         if (!empty($request->subject)){
