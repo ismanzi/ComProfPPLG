@@ -13,16 +13,15 @@ return new class extends Migration
     {
         Schema::create('achievements', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('position');
+            $table->string('title');
+            $table->date('date');
             $table->string('area');
             $table->string('level');
-            $table->string('organizer');
-            $table->date('date');
-            $table->string('image')->nullable();
             $table->string('categories');
-            $table->text('participant')->nullable();
+            $table->text('participant');
+            $table->string('organizer');
             $table->text('desc')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

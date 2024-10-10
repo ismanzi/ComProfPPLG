@@ -15,13 +15,14 @@ class AchievementSeeder extends Seeder
     {
         //
         Achievement::create([
-            'name' => 'Best Developer',
-            'position' => '1st',
-            'area' => 'Software Development',
-            'level' => 'National',
-            'organizer' => 'Tech Conference',
+            'title' => 'Best Developer',
             'date' => '2024-09-27',
-            'desc' => 'Best Developer in National Tech Conference'
+            'area' => 'Software Development',
+            'level' => 'Nasional',
+            'categories' => 'Individu',
+            'organizer' => 'Tech Conference',
+            'desc' => 'Best Developer in National Tech Conference',
+            'image' => 'Sertifikat.png'
         ]);
     }
 }

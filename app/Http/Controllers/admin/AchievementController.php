@@ -32,16 +32,15 @@ class AchievementController extends Controller
     public function store(Request $request, Achievement $achievement)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'date' => 'required|date',
             'area' => 'required|string|max:255',
             'level' => 'required|string',
-            'organizer' => 'required|string|max:255',
-            'date' => 'required|date',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'categories' => 'required',
             'participant' => 'nullable|string',
+            'organizer' => 'required|string|max:255',
             'desc' => 'nullable|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle image upload
@@ -75,15 +74,15 @@ class AchievementController extends Controller
 
         // Validate data
         $validData = $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'date' => 'required|date',
             'area' => 'required|string|max:255',
             'level' => 'required|string',
-            'organizer' => 'required|string|max:255',
-            'date' => 'required|date',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'categories' => 'required',
             'participant' => 'nullable|string',
+            'organizer' => 'required|string|max:255',
             'desc' => 'nullable|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // If a new image file is uploaded, delete the old image and upload the new one

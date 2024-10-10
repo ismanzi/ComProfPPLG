@@ -24,26 +24,22 @@
                 <table class="table table-bordered" id="achievementTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Nama</th>
-                            <th>Posisi</th>
+                            <th>Judul</th>
+                            <th>Tanggal</th>
                             <th>Bidang</th>
                             <th>Tingkat</th>
                             <th>Penyelenggara</th>
-                            <th>Tanggal</th>
-                            <th>Kategori</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($achievement as $achievements)
                             <tr>
-                                <td>{{ $achievements->name }}</td>
-                                <td>{{ $achievements->position }}</td>
+                                <td>{{ $achievements->title }}</td>
+                                <td>{{ \Carbon\Carbon::parse($achievements->date)->format('d-m-Y') }}</td>
                                 <td>{{ $achievements->area }}</td>
                                 <td>{{ $achievements->level }}</td>
                                 <td>{{ $achievements->organizer }}</td>
-                                <td>{{ \Carbon\Carbon::parse($achievements->date)->format('d-m-Y') }}</td>
-                                <td>{{ $achievements->categories }}</td>
                                 <td>
                                     <a href="{{ route('pages.admin.achievement.view', $achievements->id) }}"
                                         class="btn btn-info">View</a>

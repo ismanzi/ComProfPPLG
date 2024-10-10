@@ -9,13 +9,13 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="title" class="form-label">Judul Pencapaian</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="position" class="form-label">Posisi</label>
-                    <input type="text" class="form-control" id="position" name="position" required>
+                    <label for="date" class="form-label">Tanggal</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
                 </div>
 
                 <div class="mb-3">
@@ -37,24 +37,6 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="organizer" class="form-label">Penyelenggara</label>
-                    <input type="text" class="form-control" id="organizer" name="organizer" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" required>
-                        <label class="custom-file-label" for="image">Choose file</label>
-                    </div>
-                </div>
-
-                <div class="mb-3">
                     <label for="level" class="form-label">Kategori</label>
                     <select class="form-control" id="level" name="categories" required>
                         <option value="" disabled selected>Pilih Kategori</option>
@@ -69,9 +51,24 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="organizer" class="form-label">Penyelenggara</label>
+                    <input type="text" class="form-control" id="organizer" name="organizer" required>
+                </div>
+
+                <div class="mb-3">
                     <label for="desc" class="form-label">Deskripsi</label>
                     <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*"
+                            required>
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
+                </div>
+
 
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
@@ -88,11 +85,18 @@
                 }
             }
 
-            // Display the name of the selected image file
+            // Display the name of the selected image file and preview image in a new tab
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-                var fileName = document.getElementById("image").files[0].name;
+                var file = e.target.files[0];
+                var fileName = file.name;
                 var nextSibling = e.target.nextElementSibling;
                 nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Open a new tab with the image preview
+                var imagePreviewWindow = window.open(imageURL);
             });
         </script>
     </div>
