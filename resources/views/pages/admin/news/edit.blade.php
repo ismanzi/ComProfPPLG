@@ -5,54 +5,58 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
+             <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                <!-- Judul Artikel -->
                 <div class="mb-3">
                     <label for="title" class="form-label">Judul Artikel</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $news->title) }}" required>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ $news->title }}"
+                        required>
                 </div>
 
-                <!-- URL Website -->
                 <div class="mb-3">
                     <label for="slug" class="form-label">URL Website</label>
-                    <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $news->slug) }}" required>
-                </div>
-
-                <!-- Foto -->
-                <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image">
-                        <label class="custom-file-label" for="image">Choose file</label>
-                    </div>
-                    @if ($news->image)
-                        <p>Current image: <a href="{{ asset('storage/' . $news->image) }}" target="_blank">View Image</a></p>
-                    @endif
-                </div>
-
-                <!-- Deskripsi -->
-                <div class="mb-3">
-                    <label for="desc" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="desc" name="desc" rows="4">{{ old('desc', $news->desc) }}</textarea>
+                    <input type="text" class="form-control" id="slug" name="slug" value="{{ $news->slug }}"
+                        required>
                 </div>
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="date" name="date"
-                        value="{{ old('date', $news->date) }}" required>
+                    <input type="date" class="form-control" id="date" name="date" value="{{ $news->date }}"
+                        required>
                 </div>
 
-                <!-- Button Submit dan Cancel -->
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="4" required>{{ $news->desc }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    @if ($news->image)
+                        <img id="image-preview" src="{{ asset('storage/news/' . $news->image) }}" alt="Image Preview"
+                            style="max-width: 20%;" />
+                    @else
+                        <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
+                    @endif
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
             </form>
         </div>
 
         <!-- JavaScript -->
         <script>
+            // Alert confirm discard changes
             function confirmCancel() {
                 const userConfirmed = confirm("Are you sure you want to cancel these changes?");
                 if (userConfirmed) {
@@ -60,10 +64,20 @@
                 }
             }
 
+            // Display the name of the selected image file and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-                var fileName = document.getElementById("image").files[0].name;
+                var file = e.target.files[0];
+                var fileName = file.name;
                 var nextSibling = e.target.nextElementSibling;
                 nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
             });
         </script>
     </div>

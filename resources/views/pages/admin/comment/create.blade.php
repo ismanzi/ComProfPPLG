@@ -16,9 +16,10 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" name="email" required>
                 </div>
+
                 <div class="mb-3">
                     <label for="review" class="form-label">Review</label>
-                    <input type="text" class="form-control" id="review" name="review" required>
+                    <textarea class="form-control" id="review" name="review" rows="4"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>

@@ -1,6 +1,6 @@
 @extends('pages.admin.index')
 
-@section('title', 'comment')
+@section('title', 'Comment')
 
 @section('btn-title', 'Create')
 

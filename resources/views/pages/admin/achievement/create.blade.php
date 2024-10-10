@@ -88,7 +88,7 @@
                 }
             }
 
-            // Display the name of the selected image file and show image preview
+            // Display name of selected image and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
                 var file = e.target.files[0];
                 var fileName = file.name;
