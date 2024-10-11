@@ -35,6 +35,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
@@ -55,7 +56,7 @@
                             @foreach ($achievements as $achievement)
                                 <option value="{{ $achievement->id }}"
                                     {{ in_array($achievement->id, old('achievements', [])) ? 'selected' : '' }}>
-                                    {{ $achievement->name }}
+                                    {{ $achievement->title }}
                                 </option>
                             @endforeach
                         @endif

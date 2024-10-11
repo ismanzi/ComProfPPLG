@@ -5,13 +5,13 @@
 @section('btn-title', 'Create')
 
 @section('btn-icon')
-<i class="fa-solid fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
 @endsection
 
 @section('link-btn-title')
-<a href="{{ route('projek.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-    @yield('btn-icon') @yield('btn-title')
-</a>
+    <a href="{{ route('project.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        @yield('btn-icon') @yield('btn-title')
+    </a>
 @endsection
 
 @section('content')
@@ -39,22 +39,15 @@
                             <tr>
                                 <td>{{ $projects->name }}</td>
                                 <td>{{ $projects->team }}</td>
-                                <td>
-                                    @foreach ($subject as $subjects)
-                                    {{ in_array($subjects->id, old('subjects', [])) ? 'selected' : '' }}>
-                                    {{ $subjects->name }}
-                                @endforeach
-                                </td>
+                                <td>{{ $projects->subject_id }}</td>
                                 <td>{{ $projects->image }}</td>
                                 <td>{{ $projects->link }}</td>
                                 <td>{{ \Carbon\Carbon::parse($projects->date)->format('d-m-Y') }}</td>
                                 <td>{{ $projects->desc }}</td>
                                 <td>
-                                    <a href="{{ route('projek.view', $projects->id) }}"
-                                        class="btn btn-info">View</a>
-                                    <a href="{{ route('projek.edit', $projects->id) }}"
-                                        class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('projek.destroy', $projects->id) }}" method="POST"
+                                    <a href="{{ route('project.view', $projects->id) }}" class="btn btn-info">View</a>
+                                    <a href="{{ route('project.edit', $projects->id) }}" class="btn btn-warning">Edit</a>
+                                    <form action="{{ route('project.destroy', $projects->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')

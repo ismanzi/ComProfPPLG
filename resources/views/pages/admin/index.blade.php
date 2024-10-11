@@ -46,14 +46,14 @@
 
             <!-- Nav Item - Management Collapse Menu -->
             <li
-                class="nav-item {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'active' : '' }}">
+                class="nav-item {{ Request::is('achievement*') || Request::is('subject*') || Request::is('project*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Management</span>
                 </a>
                 <div id="collapseTwo"
-                    class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('projek*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
+                    class="collapse {{ Request::is('achievement*') || Request::is('subject*') || Request::is('project*') || Request::is('alumni*') || Request::is('news*') || Request::is('staff*') || Request::is('comment*') ? 'show' : '' }}"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item {{ Request::is('achievement*') ? 'active' : '' }}"
@@ -86,10 +86,10 @@
                                 style="color: {{ Request::is('comment*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Comment</span>
                         </a>
-                        <a class="collapse-item {{ Request::is('projek*') ? 'active' : '' }}"
-                            href="{{ route('projek.index') }}">
+                        <a class="collapse-item {{ Request::is('project*') ? 'active' : '' }}"
+                            href="{{ route('project.index') }}">
                             <i class="fa-solid fa-diagram-project"
-                                style="color: {{ Request::is('projek*') ? '#4e73df' : '#858796' }};"></i>
+                                style="color: {{ Request::is('project*') ? '#4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Project</span>
                         </a>
                         <a class="collapse-item {{ Request::is('staff*') ? 'active' : '' }}"

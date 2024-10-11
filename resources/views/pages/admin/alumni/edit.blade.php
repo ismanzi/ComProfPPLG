@@ -61,7 +61,7 @@
                         @foreach ($achievements as $achievement)
                             <option value="{{ $achievement->id }}"
                                 {{ in_array($achievement->id, old('achievements', $alumni->achievements->pluck('id')->toArray())) ? 'selected' : '' }}>
-                                {{ $achievement->name }}
+                                {{ $achievement->title }}
                             </option>
                         @endforeach
                     </select>

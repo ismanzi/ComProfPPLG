@@ -81,13 +81,13 @@ Route::prefix('alumni')->group(function () {
 
 // Project Routes
 Route::prefix('project')->group(function () {
-    Route::get('/', [ProjectController::class, 'index'])->name('projek.index');
-    Route::get('/create', [ProjectController::class, 'create'])->name('projek.create');
-    Route::post('/', [ProjectController::class, 'store'])->name('projek.store');
-    Route::get('/{id}/view', [ProjectController::class, 'show'])->name('projek.view');
-    Route::get('/{id}/edit', [ProjectController::class, 'edit'])->name('projek.edit');
-    Route::put('/{id}', [ProjectController::class, 'update'])->name('projek.update');
-    Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projek.destroy');
+    Route::get('/', [ProjectController::class, 'index'])->name('project.index');
+    Route::get('/create', [ProjectController::class, 'create'])->name('project.create');
+    Route::post('/', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/{id}/view', [ProjectController::class, 'show'])->name('project.view');
+    Route::get('/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::put('/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 });
 
 // Staff Routes
