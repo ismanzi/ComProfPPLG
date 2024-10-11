@@ -42,10 +42,9 @@ class ConfigController extends Controller
  */
 public function store(Request $request)
 {
-    // Cek apakah sudah ada konfigurasi
+
     $existingConfig = Config::first();
     if ($existingConfig) {
-        // Redirect kembali dengan pesan kesalahan jika konfigurasi sudah ada
         return redirect()->back()->with('error', 'Konfigurasi sudah ada. Silakan edit konfigurasi yang ada.');
     }
 
@@ -61,7 +60,6 @@ public function store(Request $request)
         'mission' => 'required|string|max:255',
     ]);
 
-    // Proses upload file jika ada
     if ($request->hasFile('bgHero')) {
         $validData['bgHero'] = $request->file('bgHero')->store('images/konfig');
     }
@@ -74,10 +72,10 @@ public function store(Request $request)
         $validData['logoY'] = $request->file('logoY')->store('images/konfig');
     }
 
-    // Simpan data ke database
+
     Config::create($validData);
 
-    // Redirect setelah berhasil
+
     return redirect()->route('configs.index')->with('success', 'Configuration Created Successfully');
 }
 
@@ -142,7 +140,7 @@ public function store(Request $request)
     {
         $configs = Config::findOrFail($id);
 
-        // Delete the images from storage if they exist
+
         if ($configs->bgHero) {
             Storage::delete($configs->bgHero);
         }
@@ -153,7 +151,7 @@ public function store(Request $request)
             Storage::delete($configs->logoY);
         }
 
-        // Delete the data from the database
+       
         $configs->delete();
 
         return redirect()->route('configs.index')->with('success', 'Configuration Deleted Successfully');
