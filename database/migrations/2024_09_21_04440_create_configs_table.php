@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('theBoys');
             $table->integer('theGurls');
-            $table->string('bgHero');
-            $table->string('logoX');
-            $table->string('logoY');
+            $table->string('bgHero')->nullable();
+            $table->string('logoX')->nullable();
+            $table->string('logoY')->nullable();
             $table->text('desc');
             $table->text('vision');
             $table->text('mission');

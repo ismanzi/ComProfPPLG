@@ -103,19 +103,19 @@
             </li>
 
             <!-- Nav Item - Settings Collapse Menu -->
-            <li class="nav-item {{ Request::is('konfig*') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::is('configs*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Settings</span>
                 </a>
-                <div id="collapseUtilities" class="collapse {{ Request::is('konfig*') ? 'show' : '' }}"
+                <div id="collapseUtilities" class="collapse {{ Request::is('configs*') ? 'show' : '' }}"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ Request::is('konfig*') ? 'active' : '' }}"
-                            href="{{ route('pages.admin.konfig.index') }}">
+                        <a class="collapse-item {{ Request::is('configs*') ? 'active' : '' }}"
+                            href="{{ route('configs.index') }}">
                             <i class="fa-solid fa-globe"
-                                style="color: {{ Request::is('konfig*') ? '##4e73df' : '#858796' }};"></i>
+                                style="color: {{ Request::is('configs*') ? '##4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Configuration</span>
                         </a>
                         <a class="collapse-item" href="#">

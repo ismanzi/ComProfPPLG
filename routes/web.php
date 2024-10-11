@@ -111,9 +111,13 @@ Route::prefix('comment')->group(function () {
 
 //Routes konfig
 Route::prefix('configs')->group(function () {
-    Route::get('/', [ConfigController::class, 'index'])->name('pages.admin.konfig.index');
-    Route::get('/create', [ConfigController::class, 'create'])->name('pages.admin.konfig.create');
-    Route::post('/', [ConfigController::class, 'store'])->name('konfig.store');
-    Route::get('/{id}/view', [ConfigController::class, 'view'])->name('pages.admin.konfig.view');
-    Route::delete('configs/{id}', [ConfigController::class, 'destroy'])->name('konfig.destroy');
+    Route::get('/', [ConfigController::class, 'index'])->name('configs.index');
+    Route::get('/create', [ConfigController::class, 'create'])->name('configs.create');
+    Route::post('/', [ConfigController::class, 'store'])->name('configs.store');
+    Route::get('/{id}/view', [ConfigController::class, 'view'])->name('configs.view');
+    Route::delete('configs/{id}', [ConfigController::class, 'destroy'])->name('configs.destroy');
+    Route::get('/{id}/edit', [ConfigController::class, 'edit'])->name('configs.edit');
+    Route::put('/{id}', [ConfigController::class, 'update'])->name('configs.update');
+
+
 });
