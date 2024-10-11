@@ -64,7 +64,7 @@
         $(document).ready(function() {
             $('#achievementTable').DataTable({
                 "pageLength": 10, // Menampilkan 10 entri per halaman
-                "searching": true, // Fitur pencarian
+                "searching": true, 
             });
         });
     </script>

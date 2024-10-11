@@ -51,7 +51,6 @@
                     </div>
                 </div>
 
-                <!-- Image Preview -->
                 <div class="mb-3">
                     <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
                 </div>

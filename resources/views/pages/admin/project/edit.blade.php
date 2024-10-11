@@ -57,7 +57,6 @@
                     </div>
                 </div>
 
-                <!-- Image Preview -->
                 <div class="mb-3">
                     @if ($project->image)
                         <img id="image-preview" src="{{ asset('storage/projects/' . $project->image) }}" alt="Image Preview"
