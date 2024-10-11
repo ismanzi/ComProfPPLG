@@ -9,7 +9,7 @@
 @endsection
 
 @section('link-btn-title')
-    @if($configs->isEmpty()) {{-- Jika tidak ada konfigurasi, tampilkan tombol Create --}}
+    @if($configs->isEmpty()) 
         <a href="{{ route('configs.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
             @yield('btn-icon') @yield('btn-title')
         </a>

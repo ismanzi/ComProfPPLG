@@ -84,7 +84,6 @@
                 }
             }
 
-            // Display the name of the selected image file and show a preview
             function setupFileInput(inputId, previewId) {
                 const input = document.getElementById(inputId);
                 const label = input.nextElementSibling;
@@ -93,13 +92,13 @@
                 input.addEventListener('change', function (e) {
                     var file = e.target.files[0];
                     if (file) {
-                        label.innerText = file.name; // Update label with file name
+                        label.innerText = file.name;
                         const reader = new FileReader();
                         reader.onload = function (event) {
-                            preview.src = event.target.result; // Set preview source
-                            preview.style.display = 'block'; // Show preview
+                            preview.src = event.target.result;
+                            preview.style.display = 'block';
                         };
-                        reader.readAsDataURL(file); // Read file as data URL
+                        reader.readAsDataURL(file); 
                     }
                 });
             }
