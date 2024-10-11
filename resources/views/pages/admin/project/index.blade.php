@@ -27,10 +27,7 @@
                             <th>Nama Project</th>
                             <th>Tim</th>
                             <th>Subjek</th>
-                            <th>Foto</th>
-                            <th>Link</th>
                             <th>Tanggal</th>
-                            <th>Deskripsi</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -40,10 +37,7 @@
                                 <td>{{ $projects->name }}</td>
                                 <td>{{ $projects->team }}</td>
                                 <td>{{ $projects->subject_id }}</td>
-                                <td>{{ $projects->image }}</td>
-                                <td>{{ $projects->link }}</td>
                                 <td>{{ \Carbon\Carbon::parse($projects->date)->format('d-m-Y') }}</td>
-                                <td>{{ $projects->desc }}</td>
                                 <td>
                                     <a href="{{ route('project.view', $projects->id) }}" class="btn btn-info">View</a>
                                     <a href="{{ route('project.edit', $projects->id) }}" class="btn btn-warning">Edit</a>
