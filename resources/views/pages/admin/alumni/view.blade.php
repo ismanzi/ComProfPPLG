@@ -26,14 +26,7 @@
                     <input type="text" class="form-control" id="contact" name="contact" value="{{ $alumni->contact }}"
                         readonly>
                 </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    @if ($alumni->image)
-                        <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100" height="100">
-                    @else
-                        <p>No Photo</p>
-                    @endif
-                </div>
+
                 <div class="mb-3">
                     <label for="achievements" class="form-label">Penghargaan selama di Sekolah</label>
                     <select class="form-control" id="achievements" name="achievements[]" multiple disabled>
@@ -46,6 +39,23 @@
                         @endif
                     </select>
                 </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*"
+                            disabled>
+                        <label class="custom-file-label" for="image">{{ $achievement->image }}</label>
+                    </div>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    <img id="image-preview" src="{{ asset('storage/achievements/' . $achievement->image) }}"
+                        alt="Image Preview" style="max-width: 20%;" />
+                </div>
+
+                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
             </form>
         </div>
     </div>

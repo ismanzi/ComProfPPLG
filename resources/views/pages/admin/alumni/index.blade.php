@@ -27,7 +27,6 @@
                             <th>Nama</th>
                             <th>Tahun Kelulusan</th>
                             <th>Kegiatan Saat Ini</th>
-                            <th>Foto</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -37,14 +36,6 @@
                                 <td>{{ $alumni->name }}</td>
                                 <td>{{ $alumni->yearOfGraduation }}</td>
                                 <td>{{ $alumni->currentActivity }}</td>
-                                <td>
-                                    @if ($alumni->image)
-                                        <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100"
-                                            height="100">
-                                    @else
-                                        <p>No Photo</p>
-                                    @endif
-                                </td>
                                 <td>
                                     <a href="{{ route('alumni.view', $alumni->id) }}" class="btn btn-info">View</a>
                                     <a href="{{ route('alumni.edit', $alumni->id) }}" class="btn btn-warning">Edit</a>

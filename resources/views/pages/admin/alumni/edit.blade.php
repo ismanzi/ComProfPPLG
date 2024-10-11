@@ -40,21 +40,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image">
-                        <label class="custom-file-label" for="image">Choose file</label>
-                        @if ($alumni->image)
-                            <img src="{{ asset('storage/' . $alumni->image) }}" alt="Foto Alumni" width="100"
-                                height="100">
-                        @endif
-                        @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <br>
+
                 <div class="mb-3">
                     <label for="achievements" class="form-label">Penghargaan selama di Sekolah</label>
                     <select class="form-control" id="achievements" name="achievements[]" multiple>
@@ -70,28 +56,31 @@
                     @enderror
                 </div>
 
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="mb-3">
+                    @if ($achievement->image)
+                        <img id="image-preview" src="{{ asset('storage/achievements/' . $achievement->image) }}" alt="Image Preview" style="max-width: 20%;" />
+                    @else
+                        <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
+                    @endif
+                </div>
+
                 <button type="submit" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
             </form>
         </div>
 
-        {{-- CSS --}}
-        <style>
-            select.form-control {
-                height: calc(2.25rem + 2px);
-                padding: .375rem .75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                border: 1px solid #ced4da;
-                border-radius: .25rem;
-                background-color: #fff;
-                background-clip: padding-box;
-                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-            }
-        </style>
-
         <!-- JavaScript -->
         <script>
+            // Alert confirm discard changes
             function confirmCancel() {
                 const userConfirmed = confirm("Are you sure you want to cancel these changes?");
                 if (userConfirmed) {
@@ -99,22 +88,20 @@
                 }
             }
 
-            $('#achievements').on('change', function() {
-                var blankOptionSelected = $(this).find('option[value=""]:selected').length > 0;
-                var selectedOptions = $(this).val();
-                if (blankOptionSelected) {
-                    console.log('Blank option selected');
-                } else if (selectedOptions.length === 1) {
-                    console.log('One achievement selected:', selectedOptions);
-                } else {
-                    console.log('Multiple achievements selected:', selectedOptions);
-                }
-            });
-
+            // Display the name of the selected image file and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-                var fileName = document.getElementById("image").files[0].name;
+                var file = e.target.files[0];
+                var fileName = file.name;
                 var nextSibling = e.target.nextElementSibling;
                 nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
             });
         </script>
     </div>

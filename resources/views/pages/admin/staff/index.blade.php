@@ -27,7 +27,6 @@
                             <th>Nama</th>
                             <th>NIP</th>
                             <th>Deskripsi</th>
-                            <th>Foto</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -37,14 +36,6 @@
                                 <td>{{ $staffs->name }}</td>
                                 <td>{{ $staffs->nip }}</td>
                                 <td>{{ $staffs->jobDesc }}</td>
-                                <td>
-                                    @if ($staffs->image)
-                                        <img src="{{ asset('storage/' . $staffs->image) }}" alt="Foto Staff" width="100"
-                                            height="100">
-                                    @else
-                                        <p>No Photo</p>
-                                    @endif
-                                </td>
                                 <td>
                                     <a href="{{ route('staff.view', $staffs->id) }}" class="btn btn-info">View</a>
                                     <a href="{{ route('staff.edit', $staffs->id) }}" class="btn btn-warning">Edit</a>

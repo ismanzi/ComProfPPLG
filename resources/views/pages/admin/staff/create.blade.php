@@ -22,28 +22,16 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="jobDesc" class="form-label">Deskripsi</label>
-                    <input type="text" class="form-control" id="jobDesc" name="jobDesc" required>
-                    @error('jobDesc')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    <label for="jobDesc" class="form-label">Deskripsi Pekerjaan</label>
+                    <textarea class="form-control" name="jobDesc" id="jobDesc" rows="4"></textarea>
                 </div>
+
                 <div class="mb-3">
                     <label for="linkedin" class="form-label">Linkedin</label>
                     <input type="text" class="form-control" id="linkedin" name="linkedin">
                     @error('linkedin')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Foto</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image" name="image" required>
-                        <label class="custom-file-label" for="image">Choose file</label>
-                        @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
                 </div>
 
                 {{-- Mengarah ke tabel achievement --}}
@@ -66,29 +54,27 @@
                     @enderror
                 </div>
 
+                <div class="mb-3">
+                    <label for="image" class="form-label">Foto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" accept="image/*"
+                            required>
+                        <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <img id="image-preview" src="#" alt="Image Preview" style="max-width: 20%; display: none;" />
+                </div>
+
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="button" class="btn btn-secondary" onclick="confirmCancel()">Cancel</button>
             </form>
-
         </div>
-
-        {{-- CSS --}}
-        <style>
-            select.form-control {
-                height: calc(2.25rem + 2px);
-                padding: .375rem .75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                border: 1px solid #ced4da;
-                border-radius: .25rem;
-                background-color: #fff;
-                background-clip: padding-box;
-                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-            }
-        </style>
 
         <!-- JavaScript -->
         <script>
+            // Alert confirm discard changes
             function confirmCancel() {
                 const userConfirmed = confirm("Are you sure you want to cancel these changes?");
                 if (userConfirmed) {
@@ -96,22 +82,20 @@
                 }
             }
 
-            $('#achievements').on('change', function() {
-                var blankOptionSelected = $(this).find('option[value=""]:selected').length > 0;
-                var selectedOptions = $(this).val();
-                if (blankOptionSelected) {
-                    console.log('Blank option selected');
-                } else if (selectedOptions.length === 1) {
-                    console.log('One achievement selected:', selectedOptions);
-                } else {
-                    console.log('Multiple achievements selected:', selectedOptions);
-                }
-            });
-
+            // Display name of selected image and show image preview
             document.querySelector('.custom-file-input').addEventListener('change', function(e) {
-                var fileName = document.getElementById("image").files[0].name;
+                var file = e.target.files[0];
+                var fileName = file.name;
                 var nextSibling = e.target.nextElementSibling;
                 nextSibling.innerText = fileName;
+
+                // Create a URL object from the selected file
+                var imageURL = URL.createObjectURL(file);
+
+                // Display the image preview
+                var imagePreview = document.getElementById('image-preview');
+                imagePreview.src = imageURL;
+                imagePreview.style.display = 'block';
             });
         </script>
     </div>
