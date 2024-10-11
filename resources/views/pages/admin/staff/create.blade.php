@@ -56,7 +56,7 @@
                             @foreach ($achievements as $achievement)
                                 <option value="{{ $achievement->id }}"
                                     {{ in_array($achievement->id, old('achievements', [])) ? 'selected' : '' }}>
-                                    {{ $achievement->name }}
+                                    {{ $achievement->title }}
                                 </option>
                             @endforeach
                         @endif

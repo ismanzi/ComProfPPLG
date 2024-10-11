@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $project = Project::all();
-        return view('pages.admin.projek.index', compact('project'));
+        return view('pages.admin.project.index', compact('project'));
     }
 
     /**
@@ -24,8 +24,9 @@ class ProjectController extends Controller
     public function create()
     {
         //
-        $subject = Subject::all();
-        return view('pages.admin.projek.create', compact('subject'));
+        return view('pages.admin.project.create', [
+            'subject' => Subject::all(['id', 'name']),
+        ]);
     }
 
     /**
@@ -37,16 +38,18 @@ class ProjectController extends Controller
         $validData = $request->validate([
             'name' => 'required|string|max:255',
             'team' => 'required|string|max:255',
+            'subject_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'link' => 'required',
             'date' => 'required',
             'desc' => 'nullable|string',
-            'subject' => 'nullable|array',
-            'subject.*' => 'exists:subject,id',
         ]);
 
         if ($request->hasFile('image')) {
-            $validData['image'] = $request->file('image')->store('images/project');
+            if ($project->image) {
+                Storage::delete($project->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('images/project', 'public');
         }
 
         $project = Project::create($validData);
@@ -54,7 +57,8 @@ class ProjectController extends Controller
         if (!empty($request->subject)){
             $project->subject()->sync($request->subject);
         }
-        return redirect()->route('projek.index')->with('success', 'Project created successfully!');
+
+        return redirect()->route('project.index')->with('success', 'Project created successfully!');
     }
 
     /**
@@ -63,6 +67,8 @@ class ProjectController extends Controller
     public function show(string $id)
     {
         //
+        $project = Project::findOrFail($id);
+        return view('pages.admin.project.view', compact('project'));
     }
 
     /**
@@ -71,8 +77,9 @@ class ProjectController extends Controller
     public function edit(string $id)
     {
         //
-        $project = Project::findOrFail($id); // Get news by ID
-        return view('pages.admin.projek.edit', compact('project'));
+        $project = Project::findOrFail($id);
+        $subject = Subject::all();
+        return view('pages.admin.project.edit', compact('project'));
     }
 
     /**
@@ -86,22 +93,27 @@ class ProjectController extends Controller
         $validData = $request->validate([
             'name' => 'required|string|max:255',
             'team' => 'required|string|max:255',
+            'subject_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'link' => 'required',
+            'date' => 'required',
             'desc' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
             if ($project->image) {
                 Storage::delete($project->image);
             }
-            // Save the new image
-            $filePath = $request->file('image')->store('images/project');
-            $validData['image'] = $filePath;
+            $validatedData['image'] = $request->file('image')->store('images/project', 'public');
         }
         // Update data in the database
         $project->update($validData);
-        return redirect()->route('projek.index')->with('success', 'Project Updated Successfully');
+
+        if (!empty($request->subject)) {
+            $project->subject()->sync($request->subject);
+        }
+
+        return redirect()->route('project.index')->with('success', 'Project Updated Successfully');
     }
 
     /**
@@ -115,12 +127,9 @@ class ProjectController extends Controller
         if ($project->image) {
             Storage::delete($project->image);
         }
+
         $project->delete();
-        return redirect()->route('projek.index')->with('success', 'Project deleted successfully!');
-    }
-    public function view($id)
-    {
-        $project = Project::findOrFail($id);
-        return view('pages.admin.projek.view', compact(var_name: 'project'));
+
+        return redirect()->route('project.index')->with('success', 'Project deleted successfully!');
     }
 }

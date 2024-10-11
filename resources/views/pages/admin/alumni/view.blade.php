@@ -39,7 +39,7 @@
                     <select class="form-control" id="achievements" name="achievements[]" multiple disabled>
                         @if ($alumni->achievements->count() > 0)
                             @foreach ($alumni->achievements as $achievement)
-                                <option value="{{ $achievement->id }}" selected>{{ $achievement->name }}</option>
+                                <option value="{{ $achievement->id }}" selected>{{ $achievement->title }}</option>
                             @endforeach
                         @else
                             <option value="">No Achievements</option>
