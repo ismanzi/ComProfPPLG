@@ -35,6 +35,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                
                 <div class="mb-3">
                     <label for="image" class="form-label">Foto</label>
                     <div class="custom-file">
