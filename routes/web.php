@@ -31,6 +31,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/landing', function () {
+    return view('pages.landing.index');
+});
+
 // Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
