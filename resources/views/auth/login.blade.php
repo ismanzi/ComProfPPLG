@@ -24,8 +24,17 @@
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-12 col-md-9">
                 <div class="card o-hidden border-0 shadow-lg my-5">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
+                        @error('notif')
+                        <p class="Login-box-msg error invalid-feedback" style="display: inline">{{$message}}</p>
+                    @enderror
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="p-5">
@@ -34,16 +43,26 @@
                                         <br><br>
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
+                                    <form action="{{ route('auth.authenticate') }}" method="POST" >
+                                        @csrf
+
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            <input name="username" type="text" class="form-control form-control-user  @error('username') {{ 'is-invalid'}} @enderror" id="username" aria-describedby="emailHelp" placeholder="Enter username">
+                                            @error('username')
+                                            <span class="error invalid-feedback" style="display: inline;">{{$message}}</span>
+                                        @enderror
+
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input name="password" type="password" class="form-control form-control-user @error('password') {{ 'is-invalid'}} @enderror" id="password" placeholder="Password">
+                                            @error('password')
+                                            <span class="error invalid-feedback" style="display: inline;">{{$message}}</span>
+                                        @enderror
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <input type="submit" value="Login" class="btn btn-primary w-100">
+                                        <div class="text-center">
+                                        </div>
                                     </form>
                                 </div>
                             </div>

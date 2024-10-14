@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\{
     ProjectController,
     StaffController,
     ConfigController,
+    AuthController,
 };
 
 /*
@@ -25,17 +26,12 @@ use App\Http\Controllers\admin\{
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
+
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 });
 
-Route::get('/landing', function () {
-    return view('pages.landing.index');
-});
-
-// Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
 
@@ -125,3 +121,25 @@ Route::prefix('configs')->group(function () {
 
 
 });
+
+//Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'admin'])->name('dashboard.admin');
+    Route::resource('/', AchievementController::class);
+    Route::resource('/', NewsController::class);
+    Route::resource('/', SubjectController::class);
+    Route::resource('/', AlumniController::class);
+    Route::resource('/', ProjectController::class);
+    Route::resource('/', StaffController::class);
+    Route::resource('/', CommentController::class);
+    Route::resource('/', ConfigController::class);
+});
+
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/login','login')->name('auth.login');
+    Route::post('/authenticate','authenticate')->name('auth.authenticate');
+    Route::post('/logout','logout')->name('auth.logout');
+});
+
+// Dashboard Routes

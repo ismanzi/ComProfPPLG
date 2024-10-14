@@ -13,6 +13,8 @@ use App\Models\Staff;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+
 
 class DashboardController extends Controller
 {
@@ -28,6 +30,13 @@ class DashboardController extends Controller
         $totalComment = Comment::count();
 
         // Kirim data ke view
-        return view('pages.admin.dashboard.index', compact('totalAchievement', 'totalNews', 'totalSubject', 'totalAlumni', 'totalStaff', 'totalProject', 'totalComment', 'totalComment'));
+        return view('pages.admin.dashboard.index', compact('totalAchievement', 'totalNews', 'totalSubject', 'totalAlumni', 'totalStaff', 'totalProject', 'totalComment'));
+    }
+
+    public function admin(){
+        if (Auth::check()) {
+            return view('pages.admin.dashboard.index');
+        }
+        return redirect()->route('auth.login')->withErrors(['notif' => 'Login dulu bang'])->onlyInput('username');
     }
 }
