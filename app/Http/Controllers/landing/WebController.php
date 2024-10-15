@@ -1,24 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\landing;
 
-use App\Models\Config;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class WebController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        // Ambil data konfigurasi pertama dari tabel Config
-        $config = Config::first();
-
-        // Cek apakah data config ada
-        if ($config) {
-            $theBoys = $config->theBoys;
-        } else {
-            $theBoys = 0; // Nilai default jika config tidak ditemukan
-        }
-
-        // Kirim nilai theBoys ke view
-        return view('homepage', ['theBoys' => $theBoys]);
+        return view('pages.landing.index');
     }
 }

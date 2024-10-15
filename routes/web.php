@@ -15,6 +15,10 @@ use App\Http\Controllers\admin\{
     AuthController,
 };
 
+use App\Http\Controllers\landing\{
+    WebController,
+};
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +38,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
+Route::get('/landing', [WebController::class, 'index'])->name('pages.landing.index');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
