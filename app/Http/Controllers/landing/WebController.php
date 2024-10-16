@@ -15,4 +15,6 @@ class WebController extends Controller
     {
         return view('pages.landing.home');
     }
+
+    // 
 }
