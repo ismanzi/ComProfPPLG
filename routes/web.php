@@ -38,7 +38,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
-Route::get('/landing', [WebController::class, 'index'])->name('pages.landing.index');
+Route::get('/home', [WebController::class, 'index'])->name('pages.landing.home');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {

@@ -13,6 +13,6 @@ class WebController extends Controller
      */
     public function index()
     {
-        return view('pages.landing.index');
+        return view('pages.landing.home');
     }
 }
