@@ -61,7 +61,7 @@
                     <div
                         class="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                         <div class="relative space-y-8 py-12 p-8">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4341/4341139.png" class="w-12"
+                            <img src="{{ asset('baselanding/icons/success.png') }}" class="w-12"
                                 width="512" height="512" alt="burger illustration">
 
                             <div class="space-y-2">

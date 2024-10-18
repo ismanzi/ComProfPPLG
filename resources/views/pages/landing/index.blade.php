@@ -49,15 +49,7 @@
                             <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
                                 <li>
                                     <a href="#"
-                                        class="block md:px-4 transition hover:text-primary p-2 rounded">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block md:px-4 transition hover:text-primary p-2 rounded">Curriculum</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block md:px-4 transition hover:text-primary p-2 rounded">Achievement</a>
+                                        class="block md:px-4 transition hover:text-primary p-2 rounded">About us</a>
                                 </li>
                                 <li>
                                     <a href="#"
@@ -117,7 +109,7 @@
                     </div>
                 </div>
                 <div class="mt-10 text-center">
-                    <span class="block text-gray-500 dark:text-gray-400 ">2024 PPLG SMKN 1 Karawang &copy; <span id="year"></span></span>
+                    <span class="block text-gray-500 dark:text-gray-400 ">&copy; 2024 PPLG SMKN 1 Karawang<span id="year"></span></span>
                 </div>
             </div>
         </div>
