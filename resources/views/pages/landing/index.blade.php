@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
+{{-- Index --}}
 <body class="bg-white dark:bg-gray-900 astro-FLTEP2YP">
     <header class="astro-UY3JLCBK">
         <nav class="fixed top-0 left-0 z-10 w-full bg-white shadow-lg">

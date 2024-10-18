@@ -38,6 +38,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
+// Landing Routes
 Route::get('/pplg.smkn1karawang.sch.id/home', [WebController::class, 'home'])->name('pages.landing.home');
 Route::get('/pplg.smkn1karawang.sch.id/achievement', [WebController::class, 'achievement'])->name('pages.landing.achievement');
 

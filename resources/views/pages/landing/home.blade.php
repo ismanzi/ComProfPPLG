@@ -1,3 +1,4 @@
+{{-- Home --}}
 @extends('pages.landing.index')
 
 @section('content')

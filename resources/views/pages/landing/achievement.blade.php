@@ -1,3 +1,4 @@
+{{-- Achievement --}}
 @extends('pages.landing.index')
 
 @section('content')
