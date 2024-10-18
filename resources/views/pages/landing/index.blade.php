@@ -77,23 +77,27 @@
 
     <div>
     @yield('content')
-    <footer class="py-20 md:py-40">
+    <footer class="py-20 md:py-40 bg-blue-600">
         <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
             <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
                 <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
                     <div class="m-auto mt-16 w-10/12 space-y-6 text-center sm:mt-auto sm:w-5/12 sm:text-left">
-                        <div class="flex justify-center space-x-6"> <!-- Menambahkan Flexbox di sini -->
+                        <div class="flex justify-center space-x-6">
                             <img src="{{ asset('baselanding/dist/images/logos/Logo_Neskar.png') }}" alt="Logo" class="h-12">
                             <img src="{{ asset('baselanding/dist/images/logos/Logo_Horizontal_Black.png') }}" alt="Logo" class="h-12">
                         </div>
-                        <span class="block text-gray-500 dark:text-gray-400">Jl. Pangkal Perjuangan, Karawang Barat, Karawang, Jawa Barat, Indonesia – 41361</span>
-                        <span class="flex justify-between text-gray-600 dark:text-white">
+                        <span class="block text-gray-200">Jl. Pangkal Perjuangan, Karawang Barat, Karawang, Jawa Barat, Indonesia – 41361</span>
+                        <span class="flex justify-between text-gray-200">
                             <a href="mailto:smkn1karawang@gmail.com" class="font-medium flex items-center space-x-2">
                                 <i class="fas fa-envelope"></i>
                                 <span>smkn1karawang@gmail.com</span>
                             </a>
+                        </span>
+                        <div class="mt-10 text-right">
+                            <span class="block text-gray-200 mt-4">&copy; 2024 PPLG SMKN 1 Karawang<span id="year"></span></span>
+                        </div>
                     </div>
-                    <div class="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-end">
+                    <div class="flex w-full justify-center space-x-12 text-gray-200 sm:w-7/12 md:justify-end">
                         <ul role="list" class="space-y-8">
                             <li>
                                 <a href="#" class="flex items-center space-x-3 transition hover:text-primary">
@@ -120,12 +124,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="mt-10 text-center">
-                    <span class="block text-gray-500 dark:text-gray-400 mt-4 ">&copy; 2024 PPLG SMKN 1 Karawang<span id="year"></span></span>
-                </div>
             </div>
         </div>
     </footer>
+
     <script>
         // Automatically set the current year
         document.getElementById("year").textContent = new Date().getFullYear();
