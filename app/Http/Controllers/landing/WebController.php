@@ -16,5 +16,10 @@ class WebController extends Controller
         return view('pages.landing.home');
     }
 
-    // 
+    public function achievement()
+    {
+        return view('pages.landing.achievement');
+    }
+
+    //
 }
