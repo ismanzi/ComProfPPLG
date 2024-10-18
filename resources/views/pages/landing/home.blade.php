@@ -60,7 +60,7 @@
                         <div
                             class="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                             <div class="relative space-y-8 py-12 p-8">
-                                <img src="{{ asset('baselanding/icons/success.png') }}" class="w-12" width="512"
+                                <img src="{{ asset('baselanding/icons/achievement.png') }}" class="w-12" width="512"
                                     height="512" alt="burger illustration">
 
                                 <div class="space-y-2">
@@ -85,7 +85,7 @@
                         <div
                             class="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                             <div class="relative space-y-8 py-12 p-8">
-                                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341134.png" class="w-12"
+                                <img src="{{ asset('baselanding/icons/staff.png') }}" class="w-12"
                                     width="512" height="512" alt="burger illustration">
 
                                 <div class="space-y-2">
@@ -110,7 +110,7 @@
                         <div
                             class="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                             <div class="relative space-y-8 py-12 p-8">
-                                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341160.png" class="w-12"
+                                <img src="{{ asset('baselanding/icons/alumni.png') }}" class="w-12"
                                     width="512" height="512" alt="burger illustration">
 
                                 <div class="space-y-2">
@@ -136,7 +136,7 @@
                             class="group relative bg-gray-50 dark:bg-gray-900 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                             <div
                                 class="relative space-y-8 py-12 p-8 transition duration-300 group-hover:bg-white dark:group-hover:bg-gray-800">
-                                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png" class="w-12"
+                                <img src="{{ asset('baselanding/icons/curriculum.png') }}" class="w-12"
                                     width="512" height="512" alt="burger illustration">
 
                             <div class="space-y-2">
