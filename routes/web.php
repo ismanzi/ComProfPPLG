@@ -41,6 +41,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.adm
 // Landing Routes
 Route::get('/pplg.smkn1karawang.sch.id/home', [WebController::class, 'home'])->name('pages.landing.home');
 Route::get('/pplg.smkn1karawang.sch.id/achievement', [WebController::class, 'achievement'])->name('pages.landing.achievement');
+Route::get('/pplg.smkn1karawang.sch.id/about', [WebController::class, 'about'])->name('pages.landing.about');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
