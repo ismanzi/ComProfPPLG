@@ -91,12 +91,11 @@
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-content">
-                    <div class="footer-logos aligh-items">
-                        <img src="{{ asset('baseadmin/img/logos/Logo_Neskar.png') }}" alt="Logo" width="60" class="logo SMKN 1 Karawang">
-                        <img src="{{ asset('baselanding\dist\images\logos\Logo_PPLG.png') }}" alt="Logo PPLG" width="60" class="logo">
+                    <div class="footer-logos" style="display: flex; justify-content: flex-start; gap: 10px;">
+                        <img src="{{ asset('baseadmin/img/logos/Logo_Neskar.png') }}" alt="Logo" width="60">
+                        <img src="{{ asset('baselanding/dist/images/logos/Logo_PPLG.png') }}" alt="Logo PPLG" width="60">
                     </div>
-                    <span class="footer-address">Jl. Pangkal Perjuangan, Karawang Barat, Karawang, Jawa Barat, Indonesia
-                        – 41361</span>
+                    <span class="footer-address">Jl. Pangkal Perjuangan, Karawang Barat, Karawang, Jawa Barat, Indonesia – 41361</span>
                     <span class="footer-email">
                         <a href="mailto:smkn1karawang@gmail.com">smkn1karawang@gmail.com</a>
                     </span>
