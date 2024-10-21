@@ -32,16 +32,12 @@ use App\Http\Controllers\landing\{
 
 
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
+//Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.admin.dashboard.index');
 
-// Landing Routes
-Route::get('/pplg.smkn1karawang.sch.id/home', [WebController::class, 'home'])->name('pages.landing.home');
-Route::get('/pplg.smkn1karawang.sch.id/achievement', [WebController::class, 'achievement'])->name('pages.landing.achievement');
-Route::get('/pplg.smkn1karawang.sch.id/about', [WebController::class, 'about'])->name('pages.landing.about');
+Route::get('/pplg.smkn1karawang.sch.id/home', [WebController::class, 'home'])->name('landing.home');
+Route::get('/pplg.smkn1karawang.sch.id/achievement', [WebController::class, 'achievement'])->name('landing.achievement');
+Route::get('/pplg.smkn1karawang.sch.id/about', [WebController::class, 'about'])->name('landing.about');
 
 // Achievement Routes
 Route::prefix('achievement')->group(function () {
@@ -133,7 +129,7 @@ Route::prefix('configs')->group(function () {
 //Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'admin'])->name('dashboard.admin');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.admin');
     Route::resource('/', AchievementController::class);
     Route::resource('/', NewsController::class);
     Route::resource('/', SubjectController::class);

@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ Request::is('dashboard*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('pages.admin.dashboard.index') }}">
+                <a class="nav-link" href="{{ route('dashboard.admin') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>

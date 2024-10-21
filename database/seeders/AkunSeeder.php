@@ -24,17 +24,17 @@ class AkunSeeder extends Seeder
             
             [
                 'username'=>'midori',
-                'level'=>'user',
+                'level'=>'guest',
                 'password'=>Hash::make('111')
             ],
             [
                 'username'=>'altap',
-                'level'=>'user',
+                'level'=>'guest',
                 'password'=>Hash::make('222')
             ],
             [
                 'username'=>'nasyah',
-                'level'=>'user',
+                'level'=>'guest',
                 'password'=>Hash::make('333')
             ],
 

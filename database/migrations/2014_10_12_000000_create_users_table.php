@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('level', ['admin','user']);
+            $table->string('level')->default('guest');
             $table->rememberToken();
             $table->timestamps();
         });
