@@ -13,10 +13,10 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
+        if (!$request->expectsJson()) {
             // Jika user tidak login, redirect ke landing page untuk guest
             if (!Auth::check()) {
-                return 'landing.home';
+                return redirect()->route('landing.home');
             }
         }
     }
@@ -34,10 +34,10 @@ class Authenticate extends Middleware
             }
 
             // Jika bukan admin, redirect ke landing page atau unauthorized
-            return redirect('landing.home');
+            return abort(401, 'Unauthorized');
         }
 
         // Jika belum login, redirect ke halaman login atau landing page
-        return redirect('landing.home');
+        return abort(401, 'Unauthorized');
     }
 }

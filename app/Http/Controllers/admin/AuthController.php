@@ -36,7 +36,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard.admin');
         } else {
             // Jika gagal, kembali ke halaman login atau landing dengan pesan error
-            return redirect()->route('landing.home')->with('failed', 'Username atau password salah.');
+            return redirect()->route('auth.login')->with('failed', 'Username atau password salah.');
         }
     }
 

@@ -118,7 +118,10 @@
                                 style="color: {{ Request::is('configs*') ? '##4e73df' : '#858796' }};"></i>
                             <span style="margin-left: 8px;">Configuration</span>
                         </a>
-                        <a class="collapse-item" href="#">
+                        <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a class="collapse-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="fa-solid fa-right-from-bracket" style="color: #858796;"></i>
                             <span style="margin-left: 8px;">Logout</span>
                         </a>
